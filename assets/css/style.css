@@ -92,3 +92,99 @@ footer {
     color: var(--secondary);
     font-size: 2.6rem;
 }
+
+.spend {
+    list-style: none;
+    padding: 15px;
+    height: calc(100% - 50px);
+    background: rgb(196, 196, 196);
+    border-radius: 12px;
+    border: 2px solid var(--grey);
+}
+
+.purchase-item {
+    color: var(--grey);
+    padding: 15px 15px;
+    border: 2px solid var(--grey);
+    background: var(--tertiary);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+.purchase-name {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.category {
+    color: var(--secondary);
+    font-size: 1.55rem;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0 5px 0;
+    justify-content: space-between;
+}
+
+.task-actions button,
+  .task-actions select {
+    flex: 1;
+}
+
+.btn {
+      
+    margin-top: 2%;
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--primary);
+    font-size: 2.2rem;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+    box-shadow: 0 3px var(--grey);
+}
+  
+.btn:hover {
+    box-shadow: 0 2px var(--grey);
+    top: -2px;
+}
+  
+.btn:active {
+    box-shadow: 0 0px var(--grey);
+    top: 0;
+}
+
+.edit-btn,
+  .delete-btn {
+    font-size: 1.4rem;
+    padding: 5px 7px;
+    margin: 3px;
+    background: var(--secondary);
+    color: #fff;
+}
+  
+.select-dropdown,
+  .select-status {
+    display: inline-block;
+    font-size: 2.2rem;
+    color: #444;
+    padding: 12px;
+    width: 80%;
+    max-width: 100%;
+    margin: 0;
+    border: 2px solid var(--grey);
+    border-radius: 12px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url(../images/select-arrow.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+}
