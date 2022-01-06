@@ -5,6 +5,14 @@ console.log(purchaseEl);
 
 formEl.addEventListener("submit", createTaskHandler); 
 
+let createTaskHandler = function(event) {
 
+    event.preventDefault();
+
+    let purchaseInput = document.querySelector("input[name='purchase']").ariaValueMax;
+    let purchaseTypeInput = document.querySelector("select[name='category']").ariaValueMax;
+
+    
+}
     
 
