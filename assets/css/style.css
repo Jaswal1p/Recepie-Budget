@@ -1,3 +1,22 @@
 * {
-    font font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary: #d8d524;
+    --secondary: rgb(51, 51, 202);
+    --tertiary: rgb(192, 246, 253);
+    --grey: rgb(14, 13, 13);
+    font-size: 60%;
+  } 
+
+  body {
+    background: #ededed;
+    color: var(--grey);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
