@@ -82,3 +82,13 @@ footer {
     margin: 25px auto;
     width: 95%;
 }
+
+.purchase-list-wrapper {
+    flex:1;
+    margin: 0 20px 20 px;
+}
+
+.list-title {
+    color: var(--secondary);
+    font-size: 2.6rem;
+}
