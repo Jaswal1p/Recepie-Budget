@@ -3,5 +3,15 @@ body{
 }
 
 .hide{
-    display:none;
+    display: none;
+    padding: 0;
+}
+
+.enterBudget {
+    position:absolute;
+    display: block;
+    top: 35%;
+    left: 35%;
+    background-color:white;
+    padding:25px;
 }

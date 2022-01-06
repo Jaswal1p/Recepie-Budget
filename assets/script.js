@@ -11,6 +11,6 @@ $("#submitBtn").click(function(){
       else {
         console.log(budget);
         localStorage.setItem("initialBudget", budget);
-        section1.setAttribute("class", "hide");
+        section1.setAttribute("class", "hide")
       }
 })
