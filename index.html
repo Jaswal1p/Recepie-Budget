@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon1.ico">
     <title>Easy Budgeting</title>
@@ -39,9 +39,11 @@
             </form>
         </div>
 
-        <div class="form-group">
-            <input type="text" class="datepicker">
-            <select class="datepicker"></select>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <input type="date" class="datepicker">
+                </div>
         </div>
                 <div class="form-group">
                     <button class="btn" id="save-purchase" type="submit">Add purchase</button>
