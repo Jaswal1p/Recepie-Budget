@@ -2,9 +2,20 @@ let formEl = document.querySelector("#spend-form");
 console.log(formEl);
 let purchaseEl = document.querySelector("#purchase");
 console.log(purchaseEl);
+var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
 var section1 = document.querySelector(".enterBudget");
+var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
 
+
+console.log(calendar);
+fetch(calendar)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+    })
 // $("#submitBtn").click(function(){
 //     console.log("click");
 //     var budget = document.getElementById("setLimit").value;
