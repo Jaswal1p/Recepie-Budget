@@ -1,32 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon1.ico">
+    <title>Easy Budgeting</title>
+</head>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Recipe Budget</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/style.css" />
+<body>
+    <header>
+        <h1 class="page-title">Easy Budgeting</h1>
+        <p>Click to add purcahse</p>
+            
+            <form id="spend-form">
+              
+                <div class="form-group">
+                  <input type="text" name="purchase-name" class="text-input" placeholder="Enter your purchase"/>
+                </div>
 
-    </head>
-    <body>
-        <section id="intro">
-            <div class="enterBudget">
-                <h4> Enter in your current budget! </h4>
-                <p>Enter a number here to set your budget (e.g., 150.62 for $150.62)</p>
-                <input type="text" id="setLimit" placeholder="Enter Value Here">
-                <button type="submit" id="submitBtn">Submit</button>
-            </div>
+                <div class="form-group">
+                    <select name="category"        class="select-dropdown">
+                        <option value="" disabled selected>Pick spend category</option>
+                        <option value="Grocery/meals">Grocery/meals</option>
+                        <option value="house/home">house/home</option>
+                        <option value="transportation">transportation</option>
+                        <option value="fixed payments">fixed payments</option>
+                        <option value="healthcare">personal care</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn" id="save-purchase" type="submit">Add purchase</button>
+                  </div>
+
+            </form>      
+    </header>
+
+    <main class="page-content">
+        <section class="purchase-list-wrapper">
+          <h2 class="list-title">All recent spending</h2>
+          <ul class="spend" id="purchase">
+             <li class="purchase-item">A new purchase goes here!</li>
+    
+            </ul> 
         </section>
+    </main>
 
-        <section id="budgetRecipe">
 
-
-        </section>
-
-        
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="assets/script.js"></script>    </body>
+      <footer>
+        &copy;2022 by Fantastic team of BudgetApp
+      </footer> 
+    
+      <script src="./assets/js/script.js"></script>
+</body>
 </html>
