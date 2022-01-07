@@ -13,27 +13,36 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="page-title">Easy Budgeting</h1>
-        <p>Click to add purcahse</p>
-            
+    <header class="container">
+        <div class="row">
+            <h1 class="page-title">Budget Master</h1>
+            <p>Enter your Information Below</p>
             <form id="spend-form">
-              
                 <div class="form-group">
-                  <input type="text" name="purchase-name" class="text-input" placeholder="Enter your purchase"/>
+                    <input type="text" name="purchase-name" class="text-input" placeholder="Enter Purchase">
                 </div>
 
                 <div class="form-group">
-                    <select name="category"        class="select-dropdown">
+                    <input type="text" name="purchase-amount" class="text-input" placeholder="Enter Amount">
+                </div>
+
+                <div class="form-group">
+                    <select name="category" class="select-dropdown">
                         <option value="" disabled selected>Pick spend category</option>
-                        <option value="Grocery/meals">Grocery/meals</option>
-                        <option value="house/home">house/home</option>
-                        <option value="transportation">transportation</option>
-                        <option value="fixed payments">fixed payments</option>
-                        <option value="healthcare">personal care</option>
+                        <option value="Grocery/meals">Grocery/Meals</option>
+                        <option value="house/home">Home/Apartment</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="fixed payments">Recurring Payment</option>
+                        <option value="healthcare">Personal</option>
                     </select>
                 </div>
+            </form>
+        </div>
 
+        <div class="form-group">
+            <input type="text" class="datepicker">
+            <select class="datepicker"></select>
+        </div>
                 <div class="form-group">
                     <button class="btn" id="save-purchase" type="submit">Add purchase</button>
                   </div>
@@ -55,13 +64,13 @@
                     <section class="purchase-list-wrapper" id="calendar">
                         <h2 class="access">Calendar</h2>
                         <ul class="spend" id="calendar">
-                            <li class="purchase-item">Place Calendar Here!</li>
                         </ul>
                     </section>
                 </main>
             </div>
         </div>
     </div>
+
 
       <footer>
         &copy;2022 by Fantastic team of BudgetApp
