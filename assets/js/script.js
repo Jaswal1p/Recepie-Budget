@@ -8,20 +8,9 @@ var intro = document.querySelector(".enterBudget");
 var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
 
 
-// console.log(calendar);
-// fetch(calendar)
-//     .then(function(response){
-//         return response.json()
-//     })
-//     .then(function(data){
-//         console.log(data);
-//     })
-
-
-
+//If budget exists, do not generate a new budget.
 if (localStorage.getItem("budget") === null) {
     var budget=[];
-//if go into local storage and get budget and realize the budget is already there, do not run this part upon refresh (22-40). 
 document.querySelector(".application").style.display="none"
 
 $("#submitBtn").click(function(){
@@ -48,6 +37,7 @@ else {
     var budget = localStorage.getItem("budget");
 }
 
+// Add purchase to spending list 
 document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
 
 let createTaskHandler = function(event) {
@@ -69,5 +59,42 @@ let createTaskHandler = function(event) {
     console.log(purchaseEl);
 }
     
-
 formEl.addEventListener("submit", createTaskHandler); 
+
+
+
+// Giphy API
+
+var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + gifApiKey + "&limit=20";
+var q = "happy";
+var getGif= function(){
+    fetch(gifurl)
+    .then(function (response) {
+        return response.json()
+        .then(function(data){
+            console.log(data);
+            
+        })
+    })
+}
+getGif();
+
+
+{/* ADD TO INDEX FOR DATE LONG W CAL<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> */}
+
+
+// console.log(calendar);
+// fetch(calendar)
+//     .then(function(response){
+//         return response.json()
+//     })
+//     .then(function(data){
+//         console.log(data);
+//     })
+
+//calendar 
+// var cal = function(){
+//     console.log("function called");
+// };
+// cal();
