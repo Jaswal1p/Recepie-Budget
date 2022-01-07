@@ -17,24 +17,38 @@ var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
 //         console.log(data);
 //     })
 
+
+
+if (localStorage.getItem("budget") === null) {
+    var budget=[];
+//if go into local storage and get budget and realize the budget is already there, do not run this part upon refresh (22-40). 
 document.querySelector(".application").style.display="none"
 
 $("#submitBtn").click(function(){
     console.log("click");
-    var budget = document.getElementById("setLimit").value;
-    console.log(budget)
-    if (isNaN(budget)) {
+    var myBudget = document.getElementById("setLimit").value;
+    console.log(myBudget)
+    if (isNaN(myBudget)) {
         document.getElementById("setLimit").value="";
         window.alert("Please enter a numeric value.");
         return;
       }
       else {
-        console.log(budget);
-        localStorage.setItem("initialBudget", budget);
+        console.log(myBudget);
+        budget.push(myBudget);
+        JSON.stringify("myBudget");
+        localStorage.setItem("budget", budget);
         intro.setAttribute("class", "hide");
-        document.querySelector(".application").style.display="block"
+        document.querySelector(".application").style.display="block";
     }
 })
+}
+else {
+    intro.style.display="none";
+    var budget = localStorage.getItem("budget");
+}
+
+document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
 
 let createTaskHandler = function(event) {
 
