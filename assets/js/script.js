@@ -7,11 +7,10 @@ var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 var intro = document.querySelector(".enterBudget");
 var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
 
-
 //If budget exists, do not generate a new budget.
 if (localStorage.getItem("budget") === null) {
     var budget=[];
-document.querySelector(".application").style.display="none"
+document.querySelector(".application").style.display=""
 
 $("#submitBtn").click(function(){
     console.log("click");
@@ -60,6 +59,7 @@ let createTaskHandler = function(event) {
 }
     
 formEl.addEventListener("submit", createTaskHandler); 
+
 
 
 
