@@ -104,10 +104,10 @@ footer {
 
 .purchase-list-wrapper {
     flex:1;
-    margin: 0 20px 20 px;
+    margin: 0 20px 20px;
 }
 
-.list-title {
+.list-title, .access {
     color: var(--secondary);
 }
 
