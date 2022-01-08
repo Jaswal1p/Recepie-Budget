@@ -39,7 +39,7 @@ $("#submitBtn").click(function(){
 })
 }
 else {
-    intro.style.display="none";
+    intro.style.display="budget";
     var budget = localStorage.getItem("budget");
 }
 

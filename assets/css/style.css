@@ -66,7 +66,7 @@ form input {
     outline: none;
     border: none;
     padding: 12px;
-    width: 80%;
+    width: 30%;
     font-size: 2.2rem;
     border: 2px solid var(--grey);
     border-radius: 12px;
@@ -76,6 +76,7 @@ form .form-group {
     margin: 10px 6px 10px 0;
     flex: 1;
 }
+
 
 footer {
     width: 100%;
@@ -112,7 +113,17 @@ footer {
     top: 35%;
     left: 35%;
     background-color:white;
-    padding:25px;
+    padding:15px;
+}
+
+#setLimit {
+    outline: none;
+    border: none;
+    padding: 12px;
+    width: 30%;
+    font-size: 2.2rem;
+    border: 2px solid var(--grey);
+    border-radius: 12px;
 }
 
 .list-title, .access {
@@ -162,6 +173,19 @@ footer {
     flex: 1;
 }
 
+.submit-button {
+    margin-top: 2%;
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    background: var(--primary);
+    font-size: 2.2rem;
+    border-radius: 12px;
+    top: -3px;
+    box-shadow: 0 3px var(--grey);
+}
+
 .btn {
       
     margin-top: 2%;
@@ -181,8 +205,19 @@ footer {
     box-shadow: 0 2px var(--grey);
     top: -2px;
 }
+
+.submit-button:hover {
+    box-shadow: 0 2px var(--grey);
+    top: -2px;
+}
+
   
 .btn:active {
+    box-shadow: 0 0px var(--grey);
+    top: 0;
+}
+
+.submit-button:active {
     box-shadow: 0 0px var(--grey);
     top: 0;
 }
@@ -202,7 +237,7 @@ footer {
     font-size: 2.2rem;
     color: #444;
     padding: 12px;
-    width: 80%;
+    width: 30%;
     max-width: 100%;
     margin: 0;
     border: 2px solid var(--grey);

@@ -17,26 +17,23 @@
     <h1>Enter your budget!</h1>
     <p>e.g., for a $250.25 budget, enter: 250.25</p>
     <input id="setLimit" placeholder="Enter Your Budget"> 
-    <button id="submitBtn">Submit</button>
   </div> -->
 
     <div class="application">
     <header>
         <h1 class="page-title">Easy Budgeting</h1>
         <h2 id="enter-budget"></h2>
-        <button class="submit-button" id="submit-button" type="button"></button>
+        <h1>Enter your Budget!</h1>
+        <input id="setLimit" placeholder="Enter Your Budget">
+        <button class="submit-button" id="submit-button" type="button">Enter</button>
         <h2 id="remaining"></h2>
-        <p>Add Purchase Data</p>
+    </header>
             
             <form id="spend-form">
                 <div class="form-group">
                     <input type="text" name="purchase-name" class="text-input" placeholder="Enter Purchase">
                     <input type="text" name="purchase-amount" class="text-input" placeholder="Enter Amount">
                 </div>
-
-                <!-- <div class="form-group">
-                    <input type="text" name="purchase-amount" class="text-input" placeholder="Enter Amount">
-                </div> -->
 
                 <div class="form-group">
                     <select name="category" class="select-dropdown">
@@ -53,17 +50,15 @@
                             <div class="col s12">
                                 <input type="date" class="datepicker">
                             </div>
+                            
+                            <div class="form-group">
+                                <button class="btn" id="save-purchase" type="submit">Add purchase</button>
+                            </div>
                     </div>
                 </div>
             </form>
         </div>
-
-                <div class="form-group">
-                    <button class="btn" id="save-purchase" type="submit">Add purchase</button>
-                  </div>
-
             </form>      
-    </header>
 
     <div class="row">
         <div class="col s12">
@@ -92,12 +87,9 @@
         &copy;2022 by Fantastic team of BudgetApp
       </footer> 
     
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
     <script src="./assets/js/script.js"></script>
 
 </body>
