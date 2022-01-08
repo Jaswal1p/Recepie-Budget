@@ -13,27 +13,30 @@
 </head>
 
 
-  <div class="enterBudget">
+  <!-- <div class="enterBudget">
     <h1>Enter your budget!</h1>
     <p>e.g., for a $250.25 budget, enter: 250.25</p>
     <input id="setLimit" placeholder="Enter Your Budget"> 
     <button id="submitBtn">Submit</button>
-  </div>
+  </div> -->
 
     <div class="application">
     <header>
         <h1 class="page-title">Easy Budgeting</h1>
+        <h2 id="enter-budget"></h2>
+        <button class="submit-button" id="submit-button" type="button"></button>
         <h2 id="remaining"></h2>
         <p>Add Purchase Data</p>
             
             <form id="spend-form">
                 <div class="form-group">
                     <input type="text" name="purchase-name" class="text-input" placeholder="Enter Purchase">
-                </div>
-
-                <div class="form-group">
                     <input type="text" name="purchase-amount" class="text-input" placeholder="Enter Amount">
                 </div>
+
+                <!-- <div class="form-group">
+                    <input type="text" name="purchase-amount" class="text-input" placeholder="Enter Amount">
+                </div> -->
 
                 <div class="form-group">
                     <select name="category" class="select-dropdown">

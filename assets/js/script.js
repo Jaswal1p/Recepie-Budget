@@ -11,6 +11,13 @@ var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
 if (localStorage.getItem("budget") === null) {
     var budget=[];
 document.querySelector(".application").style.display=""
+intro.setAttribute("class", "hide");
+
+$("#submit-button").click(function(){
+    console.log("click");
+})
+
+
 
 $("#submitBtn").click(function(){
     console.log("click");
