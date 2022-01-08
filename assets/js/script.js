@@ -28,6 +28,7 @@ $("#submitBtn").click(function(){
         JSON.stringify("myBudget");
         localStorage.setItem("budget", budget);
         intro.setAttribute("class", "hide");
+        document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
         document.querySelector(".application").style.display="block";
     }
 })
@@ -81,22 +82,18 @@ var getGif= function(){
 getGif();
 
 
-{/* ADD TO INDEX FOR DATE LONG W CAL<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> */}
 
-// var response =fetch("https://");
-// console.log(response);
+var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
+var product="shoes"
+var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product + "&sort_by=price_high_to_low";
+var getPrice = function(){
+    fetch(priceurl)
+    .then(function(response){
+        return response.json()
+        .then(function(data){
+            console.log(data);
+        })
+    })
+}
+getPrice();
 
-// console.log(calendar);
-// fetch(calendar)
-//     .then(function(response){
-//         return response.json()
-//     })
-//     .then(function(data){
-//         console.log(data);
-//     })
-
-//calendar 
-// var cal = function(){
-//     console.log("function called");
-// };
-// cal();
