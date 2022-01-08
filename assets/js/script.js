@@ -67,14 +67,14 @@ formEl.addEventListener("submit", createTaskHandler);
 
 var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
 var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + gifApiKey + "&limit=20";
-var q = "happy";
+var q = "house";
 var getGif= function(){
     fetch(gifurl)
     .then(function (response) {
         return response.json()
         .then(function(data){
             console.log(data);
-            
+
         })
     })
 }
@@ -83,6 +83,8 @@ getGif();
 
 {/* ADD TO INDEX FOR DATE LONG W CAL<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> */}
 
+// var response =fetch("https://");
+// console.log(response);
 
 // console.log(calendar);
 // fetch(calendar)
