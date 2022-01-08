@@ -44,16 +44,17 @@
                         <option value="fixed payments">Recurring Payment</option>
                         <option value="healthcare">Personal</option>
                     </select>
+
+                    <div class="row form-group">
+                        <form class="row">
+                            <div class="col s12">
+                                <input type="date" class="datepicker">
+                            </div>
+                    </div>
                 </div>
             </form>
         </div>
 
-        <div class="row form-group">
-            <form class="row">
-                <div class="col s12">
-                    <input type="date" class="datepicker">
-                </div>
-        </div>
                 <div class="form-group">
                     <button class="btn" id="save-purchase" type="submit">Add purchase</button>
                   </div>
@@ -72,9 +73,10 @@
                         </ul>
                     </section>
 
-                    <section class="purchase-list-wrapper" id="calendar">
-                        <h2 class="access">Calendar</h2>
-                        <ul class="spend" id="calendar">
+                    <section class="purchase-list-wrapper">
+                        <h2 class="list-title">Search</h2>
+                        <ul class="search" id="search-option">
+                            <li class="search-item">Searches will go here!</li>
                         </ul>
                     </section>
                 </main>
@@ -92,7 +94,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
     <script src="./assets/js/script.js"></script>
 
 </body>

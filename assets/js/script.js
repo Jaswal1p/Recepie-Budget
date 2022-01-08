@@ -1,7 +1,7 @@
 let formEl = document.querySelector("#spend-form");
-console.log(formEl);
+// console.log(formEl);
 let purchaseEl = document.querySelector("#purchase");
-console.log(purchaseEl);
+// console.log(purchaseEl);
 var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
 var intro = document.querySelector(".enterBudget");
@@ -81,7 +81,7 @@ var getGif= function(){
 getGif();
 
 
-{/* ADD TO INDEX FOR DATE LONG W CAL<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> */}
+/* ADD TO INDEX FOR DATE LONG W CAL<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> */
 
 
 // console.log(calendar);

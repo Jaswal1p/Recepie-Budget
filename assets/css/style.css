@@ -111,7 +111,8 @@ footer {
     color: var(--secondary);
 }
 
-.spend {
+.spend,
+.search {
     list-style: none;
     padding: 15px;
     height: calc(100% - 50px);
@@ -120,7 +121,8 @@ footer {
     border: 2px solid var(--grey);
 }
 
-.purchase-item {
+.purchase-item,
+.search-item {
     color: var(--grey);
     padding: 15px 15px;
     border: 2px solid var(--grey);
