@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon1.ico">
     <title>Easy Budgeting</title>
 </head>
 
 <body>
+    <header class="container">
+        <div class="row">
+            <h1 class="page-title">Budget Master</h1>
+            <p>Enter your Information Below</p>
   <div class="enterBudget">
     <h1>Enter your budget!</h1>
     <p>e.g., for a $250.25 budget, enter: 250.25</p>
@@ -26,22 +30,33 @@
         <p>Click to add purcahse</p>
             
             <form id="spend-form">
-              
                 <div class="form-group">
-                  <input type="text" name="purchase-name" class="text-input" placeholder="Enter your purchase"/>
+                    <input type="text" name="purchase-name" class="text-input" placeholder="Enter Purchase">
                 </div>
 
                 <div class="form-group">
-                    <select name="category"        class="select-dropdown">
+                    <input type="text" name="purchase-amount" class="text-input" placeholder="Enter Amount">
+                </div>
+
+                <div class="form-group">
+                    <select name="category" class="select-dropdown">
                         <option value="" disabled selected>Pick spend category</option>
-                        <option value="Grocery/meals">Grocery/meals</option>
-                        <option value="house/home">house/home</option>
-                        <option value="transportation">transportation</option>
-                        <option value="fixed payments">fixed payments</option>
-                        <option value="healthcare">personal care</option>
+                        <option value="Grocery/meals">Grocery/Meals</option>
+                        <option value="house/home">Home/Apartment</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="fixed payments">Recurring Payment</option>
+                        <option value="healthcare">Personal</option>
                     </select>
                 </div>
+            </form>
+        </div>
 
+        <div class="row form-group">
+            <form class="row">
+                <div class="col s12">
+                    <input type="date" class="datepicker">
+                </div>
+        </div>
                 <div class="form-group">
                     <button class="btn" id="save-purchase" type="submit">Add purchase</button>
                   </div>
@@ -49,6 +64,7 @@
             </form>      
     </header>
 
+<<<<<<< HEAD
     <main class="page-content">
         <section class="purchase-list-wrapper">
           <h2 class="list-title">All recent spending</h2>
@@ -66,14 +82,36 @@
 
           </ul>
         </section>
+=======
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <main class="page-content">
+                    <section class="purchase-list-wrapper">
+                        <h2 class="list-title">All Recent Spending</h2>
+                        <ul class="spend" id="purchase">
+                            <li class="purchase-item">A new purchase will go here!</li>
+                        </ul>
+                    </section>
+>>>>>>> main
 
-    </main>
+                    <section class="purchase-list-wrapper" id="calendar">
+                        <h2 class="access">Calendar</h2>
+                        <ul class="spend" id="calendar">
+                        </ul>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
 
 
       <footer>
         &copy;2022 by Fantastic team of BudgetApp
       </footer> 
     
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
