@@ -75,7 +75,12 @@ var getGif= function(){
         return response.json()
         .then(function(data){
             console.log(data);
-
+        })
+        .catch(function (error) {
+            console.log(error)
+            var error = document.createElement('p');
+            error.textContent = "Error"
+            return;
         })
     })
 }
@@ -84,16 +89,51 @@ getGif();
 
 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
-var product="shoes"
-var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product + "&sort_by=price_high_to_low";
-var getPrice = function(){
+
+
+var getPrice = function(product){
+
+    var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product + "&sort_by=price_high_to_low";
+
     fetch(priceurl)
     .then(function(response){
         return response.json()
         .then(function(data){
             console.log(data);
+
         })
+        .catch(function (error) {
+            console.log(error)
+            var error = document.createElement('p');
+            error.textContent = "Error"
+            search();
+            return;
+    
     })
 }
-getPrice();
+    )}
+
+
+$("#searchBtn").click(function(){
+
+    var mySearch = document.getElementById("searchItem").value;
+    var product= mySearch;
+    console.log(product);
+
+
+    var error = document.querySelector(".error");
+    error.style.display="none";
+    console.log("search click");
+    var mySearch = document.getElementById("searchItem");
+    console.log(mySearch.value)
+    if (mySearch.value == "" ) {
+        console.log("empty search");
+        document.getElementById("searchItem").value="";
+        error.textContent = "Please input an item.";
+        return;   
+    }
+    else{
+        getPrice(product);
+    } 
+})
 
