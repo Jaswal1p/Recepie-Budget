@@ -75,6 +75,7 @@ var getGif= function(){
         return response.json()
         .then(function(data){
             console.log(data);
+
         })
         .catch(function (error) {
             console.log(error)
@@ -88,18 +89,39 @@ getGif();
 
 
 
+
+
+// Price-Checker 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
-
-
 var getPrice = function(product){
 
-    var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product + "&sort_by=price_high_to_low";
+    var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
 
     fetch(priceurl)
     .then(function(response){
         return response.json()
         .then(function(data){
             console.log(data);
+            getPrice();
+                function getPrice (){
+                    var priceCheck = document.querySelector("#amazonSearches");
+                    for (i = 0; i< 5; i++) {
+                        var cards = document.createElement("span");
+                        cards.className = "cards";
+                        priceEl = document.createElement("span");
+                        priceEl.className = "cards";
+                        var product = document.querySelector("#amazonSearches");
+                        product = document.createElement("h4");
+                        title = data.search_results[i].title;
+                        console.log(title); 
+                        priceEl.innerHTML = "Product: " + title;
+                        cards.appendChild(priceEl);
+                        
+                        priceCheck.appendChild(cards);
+                    }
+
+                }
+            //search_results -i , title, image, price - raw
 
         })
         .catch(function (error) {
