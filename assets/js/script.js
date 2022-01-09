@@ -13,8 +13,12 @@ $("#submit-button").on("click", function(event) {
 $("#save-purchase").on("click", function(event) {
     console.log("click");
     event.preventDefault();
-    var purchaseInput = $(".text-input").val();
+    var purchaseInput = $(".purchase-text").val();
+    var purchaseAmount = $(".amount-text").val();
+    var purchaseCat = $(".select-dropdown").val();
     console.log(purchaseInput);
+    console.log(purchaseAmount);
+    console.log(purchaseCat);
 })
 
 
