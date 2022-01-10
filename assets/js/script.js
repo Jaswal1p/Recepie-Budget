@@ -110,31 +110,40 @@ var getPrice = function(product){
                         var cards = document.createElement("span");
                         cards.className = "cards";
 
-                        priceEl = document.createElement("span");
-                        priceEl.className = "cards";
+                        // TODO: STYLE
+                        productEl = document.createElement("span");
+                        productEl.className = "cards";
                         var product = document.querySelector("#amazonSearches");
                         product = document.createElement("h4");
                         title = data.search_results[i].title;
+                            var a = document.createElement("a");
+                            // TODO: ADD A CLASS AND HAVE THE CLASS HAVE NO TEXT DECORATION AS WELL AS ADD ATTRIBUTE FOR IT TO OPEN IN A NEW TAB. 
+                            var link = document.createTextNode(title);
+                            a.appendChild(link);
+                            a.href = data.search_results[i].link;
+                            a.innerHTML = title;
+                            productEl.appendChild(a);
+                            cards.appendChild(productEl)
 
-                        var a = document.createElement("a");
-                        var link = document.createTextNode(title);
-                        a.appendChild(link);
-                        a.href = data.search_results[i].link
-                        a.innerHTML = title;
-                        priceEl.appendChild(a);
-                        cards.appendChild(priceEl)
-
-                        // priceEl.innerHTML = title;
-                        cards.appendChild(priceEl);
 
                         imageEl = document.createElement("span");
                         imageEl.className = "cards";
                         var image = document.createElement("img")
+                        // TODO: STYLE IMAGE SIZE (much smaller) 
                         imageUrl = data.search_results[i].image;
                         image.src=imageUrl;
                         cards.appendChild(image);
-                        
-                        // add other information, set up link to amazon in target_blank, and add to local storage
+
+                        priceEl = document.createElement("span");
+                        priceEl.className = "cards";
+                        var price = document.querySelector("#amazonSearches");
+                        price = document.createElement("h4");
+                        itemPrice = data.search_results[i].price.raw;
+                        console.log(itemPrice);
+                        price.innerHTML = "Price: " + itemPrice;
+                        // priceEl.appendChild(price);
+                        cards.appendChild(price)
+                   
                         priceCheck.appendChild(cards);
                     }
                 }
