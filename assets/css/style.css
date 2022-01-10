@@ -6,7 +6,9 @@ body{
     background-color:rgb(192, 246, 253);
 }
 
-.hide{
+
+
+/* .hide{
     display: none;
     padding: 0;
 }
@@ -27,9 +29,9 @@ body{
     --tertiary: rgb(192, 246, 253);
     --grey: rgb(14, 13, 13);
     font-size: 60%;
-} 
+}  */
 
-body {
+/* body {
     background: #ededed;
     color: var(--grey);
     margin: 0;
@@ -277,7 +279,7 @@ footer {
   .select-status option {
     font-weight: normal;
     font-size: 2rem;
-}
+} */
 
 
 @media screen and (max-width: 980px) {
