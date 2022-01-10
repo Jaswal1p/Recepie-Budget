@@ -109,6 +109,7 @@ var getPrice = function(product){
                     for (i = 0; i< 5; i++) {
                         var cards = document.createElement("span");
                         cards.className = "cards";
+
                         priceEl = document.createElement("span");
                         priceEl.className = "cards";
                         var product = document.querySelector("#amazonSearches");
@@ -116,11 +117,14 @@ var getPrice = function(product){
                         title = data.search_results[i].title;
 
                         var a = document.createElement("a");
-                        var link = document.createTextNode();
+                        var link = document.createTextNode(title);
                         a.appendChild(link);
                         a.href = data.search_results[i].link
+                        a.innerHTML = title;
+                        priceEl.appendChild(a);
+                        cards.appendChild(priceEl)
 
-                        priceEl.innerHTML = "Product: " + title;
+                        // priceEl.innerHTML = title;
                         cards.appendChild(priceEl);
 
                         imageEl = document.createElement("span");
