@@ -16,9 +16,13 @@ $("#save-purchase").on("click", function(event) {
     var purchaseInput = $(".purchase-text").val();
     var purchaseAmount = $(".amount-text").val();
     var purchaseCat = $(".select-dropdown").val();
+    var purchaseDate = $(".datepicker").val();
     console.log(purchaseInput);
     console.log(purchaseAmount);
     console.log(purchaseCat);
+    console.log(purchaseDate);
+
+    $(".purchase-item").text(purchaseInput + purchaseAmount + purchaseCat + purchaseDate);
 })
 
 

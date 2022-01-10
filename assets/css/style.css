@@ -11,14 +11,14 @@ body{
     padding: 0;
 }
 
-/* .enterBudget {
+.enterBudget {
     position:absolute;
     display: block;
     top: 35%;
     left: 35%;
     background-color:white;
     padding:25px;
-} */
+}
 
 
 :root {
@@ -108,13 +108,13 @@ footer {
     margin: 0 20px 20px;
 }
 
-/* .submit-button {
+.submit-button {
     display: block;
     top: 35%;
     left: 35%;
     background-color:white;
     padding:15px;
-} */
+}
 
 #setLimit {
     outline: none;
@@ -278,6 +278,7 @@ footer {
     font-weight: normal;
     font-size: 2rem;
 }
+
 
 @media screen and (max-width: 980px) {
     form .form-group {
