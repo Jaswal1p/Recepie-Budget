@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-    <div class="application card-panel">
+    <div class="row container">
+        <div class="card-panel col s5 application">
     <header>
         <h1 class="page-title">Easy Budgeting</h1>
         <h2 id="enter-budget"></h2>
         <input id="setLimit" placeholder="Enter Your Budget">
         <button class="btn-floating btn-large pulse" id="submit-button" type="submit-button">Enter</button>
-        <h1 id="remaining"></h1>
+        <p id="remaining"></p>
     </header>
+    </div>
+    </div>
             
             <form id="spend-form">
                 <div class="form-group">
@@ -48,11 +51,12 @@
                     </div>
                 </div>
             </form>
+            </div>
         </div>
             </form>      
 
-    <div class="row">
-        <div class="col s12">
+    <div class="row container">
+        <div class="col s6">
             <div class="card">
                 <main class="page-content">
                     <section class="purchase-list-wrapper">
@@ -61,7 +65,15 @@
                             <li class="purchase-item">A new purchase will go here!</li>
                         </ul>
                     </section>
-
+                </main>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row container">
+        <div class="col s6">
+            <div class="card"
+                <main class="page-content">
                     <section class="purchase-list-wrapper">
                         <h2 class="list-title">Search</h2>
                         <ul class="search" id="search-option">
@@ -69,13 +81,13 @@
                         </ul>
                     </section>
                 </main>
+                </div>
             </div>
         </div>
-    </div>
 
 
       <footer>
-        &copy;2022 by Fantastic team of BudgetApp
+        &copy;2022 by Fantastic Team of BudgetApp
       </footer> 
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

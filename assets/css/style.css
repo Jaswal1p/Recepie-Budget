@@ -1,13 +1,11 @@
 *{
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
-
-/* body{
+body{
     background-color:rgb(192, 246, 253);
-} */
+}
 
 
 /* .hide{
