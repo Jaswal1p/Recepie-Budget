@@ -105,6 +105,7 @@ var getPrice = function(product){
             getPrice();
                 function getPrice (){
                     var priceCheck = document.querySelector("#amazonSearches");
+                    priceCheck.innerHTML="";
                     for (i = 0; i< 5; i++) {
                         var cards = document.createElement("span");
                         cards.className = "cards";
@@ -113,13 +114,25 @@ var getPrice = function(product){
                         var product = document.querySelector("#amazonSearches");
                         product = document.createElement("h4");
                         title = data.search_results[i].title;
-                        console.log(title); 
+
+                        var a = document.createElement("a");
+                        var link = document.createTextNode();
+                        a.appendChild(link);
+                        a.href = data.search_results[i].link
+
                         priceEl.innerHTML = "Product: " + title;
                         cards.appendChild(priceEl);
+
+                        imageEl = document.createElement("span");
+                        imageEl.className = "cards";
+                        var image = document.createElement("img")
+                        imageUrl = data.search_results[i].image;
+                        image.src=imageUrl;
+                        cards.appendChild(image);
                         
+                        // add other information, set up link to amazon in target_blank, and add to local storage
                         priceCheck.appendChild(cards);
                     }
-
                 }
             //search_results -i , title, image, price - raw
 
