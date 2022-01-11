@@ -92,58 +92,6 @@ let createTaskHandler = function(event) {
 
 // Giphy API
 
-<<<<<<< HEAD
-// var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
-
-// var getGif= function(categoryGif){
-// var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + category + "&api_key=" + categoryGif + "&limit=20";
-
-// var category = //what selected;
-//     fetch(gifurl)
-//     .then(function (response) {
-//         return response.json()
-//         .then(function(data){
-//             console.log(data);
-
-//             //drop down of options to select a gif. 
-//             //add gif to the recent spending with list 
-//         })
-//         .catch(function (error) {
-//             console.log(error)
-//             var error = document.createElement('p');
-//             error.textContent = "Error"
-//             return;
-//         })
-//     })
-// }
-// getGif();
-=======
-
-// var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
-// var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + gifApiKey + "&//limit=20";
-// var q = "happy";
-// var getGif= function(){
-//    fetch(gifurl)
-//    .then(function (response) {
-//      return response.json()
-//      .then(function(data){
-    //          console.log(data);
-            
-//        })
-//    })
-//}
-//  getGif();
-
-
->>>>>>> origin
-
-
-
-
-
-<<<<<<< HEAD
-// Price-Checker 
-=======
 //calendar 
 // var cal = function(){
 //     console.log("function called");
@@ -152,9 +100,7 @@ let createTaskHandler = function(event) {
 
 
 formEl.addEventListener("submit", createTaskHandler); 
-=======
-Price-Checker 
->>>>>>> origin
+// Price-Checker 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 var getPrice = function(product){
 
@@ -183,6 +129,7 @@ var getPrice = function(product){
                             // TODO: ADD A CLASS AND HAVE THE CLASS HAVE NO TEXT DECORATION AS WELL AS ADD ATTRIBUTE FOR IT TO OPEN IN A NEW TAB. 
                             var link = document.createTextNode(title);
                             a.appendChild(link);
+                            a.setAttribute("target", "_blank");
                             a.href = data.search_results[i].link;
                             a.innerHTML = title;
                             productEl.appendChild(a);
@@ -199,13 +146,13 @@ var getPrice = function(product){
 
                         priceEl = document.createElement("span");
                         priceEl.className = "cards";
-                        var price = document.querySelector("#amazonSearches");
-                        price = document.createElement("h4");
+                        var cost = document.querySelector("#amazonSearches");
+                        cost = document.createElement("h4");
                         itemPrice = data.search_results[i].price.raw;
                         console.log(itemPrice);
-                        price.innerHTML = "Price: " + itemPrice;
-                        // priceEl.appendChild(price);
-                        cards.appendChild(price)
+                        cost.innerHTML = "Price: " + itemPrice;
+                        // priceEl.appendChild(cost);
+                        cards.appendChild(cost)
                    
                         priceCheck.appendChild(cards);
                     }
