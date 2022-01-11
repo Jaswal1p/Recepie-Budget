@@ -3,6 +3,9 @@ console.log(formEl);
 let purchaseEl = document.querySelector("#purchase");
 console.log(purchaseEl);
 
+var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
+
+
 // var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
 //var intro = document.querySelector(".enterBudget");
@@ -57,6 +60,7 @@ let createTaskHandler = function(event) {
     let purchaseAmountInput = document.querySelector("input[name='price']").value;
 
     if(!purchaseInput || !purchaseAmountInput || !purchaseTypeInput) {
+        //create element that says this message (no alerts allowed)
         alert("Please fill all fields");
         return false;
     }
@@ -81,6 +85,11 @@ let createTaskHandler = function(event) {
 
     purchaseEl.appendChild(purchaseMadeEl);
     console.log(purchaseEl);
+
+    purchaseList.push(purchaseInput);
+    purchaseList.push(purchaseAmountInput);
+    purchaseList.push(purchaseTypeInput);
+    localStorage.setItem("purchaseHsitory", JSON.stringify(purchaseList));
 }
     
 
@@ -100,6 +109,8 @@ let createTaskHandler = function(event) {
 
 
 formEl.addEventListener("submit", createTaskHandler); 
+
+
 // Price-Checker 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 var getPrice = function(product){
@@ -126,7 +137,6 @@ var getPrice = function(product){
                         product = document.createElement("h4");
                         title = data.search_results[i].title;
                             var a = document.createElement("a");
-                            // TODO: ADD A CLASS AND HAVE THE CLASS HAVE NO TEXT DECORATION AS WELL AS ADD ATTRIBUTE FOR IT TO OPEN IN A NEW TAB. 
                             var link = document.createTextNode(title);
                             a.appendChild(link);
                             a.setAttribute("target", "_blank");
