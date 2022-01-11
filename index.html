@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
+<!-- Start Budget Card -->
     <div class="row container">
-        <div class="card-panel col s5 application">
+        <div class="card-panel col s6 application">
     <header>
         <h1 class="page-title">Easy Budgeting</h1>
         <h2 id="enter-budget"></h2>
@@ -22,12 +23,32 @@
     </header>
     </div>
     </div>
-            
+<!-- End Budget Card -->
+
+<!-- Start Purchase Info -->
+            <div class="row container">
             <form id="spend-form">
-                <div class="form-group">
+                <div class="card-panel form-group col s6">
                     <input type="text" name="purchase-name" class="purchase-text" placeholder="Enter Purchase">
                     <input type="text" name="purchase-amount" class="amount-text" placeholder="Enter Amount">
+                    <input type="date" class="datepicker">
+                    <div class="input-field col s5">
+                        <select>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="Grocery/meals">Grocery/Meals</option>
+                            <option value="house/home">Home/Apartment</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="fixed payments">Recurring Payment</option>
+                            <option value="healthcare">Personal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-floating btn-large pulse" id="save-purchase" type="submit">Add purchase</button>
+                    </div>
                 </div>
+                
+            </form>
+            </div>
 
                 <div class="form-group">
                     <select name="category" class="select-dropdown">
@@ -42,12 +63,8 @@
                     <div class="row form-group">
                         <form class="row">
                             <div class="col s12">
-                                <input type="date" class="datepicker">
                             </div>
                             
-                            <div class="form-group">
-                                <button class="btn-floating btn-large pulse" id="save-purchase" type="submit">Add purchase</button>
-                            </div>
                     </div>
                 </div>
             </form>
@@ -55,6 +72,7 @@
         </div>
             </form>      
 
+<!-- Start Recent Spending -->
     <div class="row container">
         <div class="col s6">
             <div class="card">
