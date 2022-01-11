@@ -53,6 +53,11 @@ let createTaskHandler = function(event) {
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
 
     let purchaseAmount = document.querySelector("input[name='purchase-amount']").value;
+
+    if(!purchaseInput || !purchaseAmountInput || !purchaseTypeInput) {
+        alert("Please fill all fields");
+        return false;
+    }
     
 
     let purchaseMadeEl = document.createElement("li");
