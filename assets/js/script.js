@@ -59,6 +59,7 @@ let createTaskHandler = function(event) {
         return false;
     }
     
+    formEl.reset();
 
     let purchaseMadeEl = document.createElement("li");
     purchaseMadeEl.className = "purchase-item"; 
