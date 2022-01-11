@@ -2,9 +2,18 @@ let formEl = document.querySelector("#spend-form");
 console.log(formEl);
 let purchaseEl = document.querySelector("#purchase");
 console.log(purchaseEl);
+let emptyListFiller = document.querySelector(".purchase-item")
 
 var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
 
+if (purchaseList === null){
+    var purchaseList = []
+}
+else {
+    var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
+}
+
+renderSearchHistory;
 
 // var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
@@ -66,6 +75,7 @@ let createTaskHandler = function(event) {
     }
     
     formEl.reset();
+    emptyListFiller.setAttribute("class", "hide");
 
     let purchaseMadeEl = document.createElement("li");
     purchaseMadeEl.className = "purchase-item"; 
@@ -203,3 +213,12 @@ $("#searchBtn").click(function(){
         getPrice(product);
     } 
 })
+
+
+
+function renderSearchHistory(){
+    if (purchaseList.length<1){
+        return
+    }
+    purchaseEl.innerHTML="";
+}
