@@ -2,6 +2,7 @@ let formEl = document.querySelector("#spend-form");
 console.log(formEl);
 let purchaseEl = document.querySelector("#purchase");
 console.log(purchaseEl);
+
 var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
 var intro = document.querySelector(".enterBudget");
@@ -46,7 +47,11 @@ let createTaskHandler = function(event) {
     event.preventDefault();
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
+
+    let currencySign = document.getElementById("dollar");
+
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
+
     let purchaseAmount = document.querySelector("input[name='purchase-amount']").value;
     
 
