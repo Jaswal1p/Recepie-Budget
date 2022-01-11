@@ -52,7 +52,7 @@ let createTaskHandler = function(event) {
 
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
 
-    let purchaseAmount = document.querySelector("input[name='purchase-amount']").value;
+    let purchaseAmountInput = document.querySelector("input[name='price']").value;
 
     if(!purchaseInput || !purchaseAmountInput || !purchaseTypeInput) {
         alert("Please fill all fields");
@@ -70,7 +70,11 @@ let createTaskHandler = function(event) {
     purchaseInfoEl.className = "purchase-info";
 
     
-    purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + purchaseInput + "</h3><h3 class='purchase-amount'>" + purchaseAmount +  "</h3><span class='category'>" + purchaseTypeInput + "</span>";
+    purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
+    purchaseInput + "</h3><h3 class='price'>" + 
+    currencySign + 
+    purchaseAmountInput +  "</h3><span class='category'>" + 
+    purchaseTypeInput + "</span>";
 
     purchaseEl.appendChild(purchaseMadeEl);
     console.log(purchaseEl);
