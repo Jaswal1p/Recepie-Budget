@@ -5,10 +5,11 @@ console.log(purchaseEl);
 var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
 var intro = document.querySelector(".enterBudget");
-var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
+//var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
 
 
 //If budget exists, do not generate a new budget.
+
 if (localStorage.getItem("budget") === null) {
     var budget=[];
 document.querySelector(".application").style.display="none"
@@ -16,13 +17,13 @@ document.querySelector(".application").style.display="none"
 $("#submitBtn").click(function(){
     console.log("click");
     var myBudget = document.getElementById("setLimit").value;
-    console.log(myBudget)
+ console.log(myBudget)
     if (isNaN(myBudget)) {
         document.getElementById("setLimit").value="";
         window.alert("Please enter a numeric value.");
         return;
       }
-      else {
+       else {
         console.log(myBudget);
         budget.push(myBudget);
         JSON.stringify("myBudget");
@@ -32,13 +33,13 @@ $("#submitBtn").click(function(){
     }
 })
 }
-else {
+   else {
     intro.style.display="none";
     var budget = localStorage.getItem("budget");
 }
 
 // Add purchase to spending list 
-document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
+ document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
 
 let createTaskHandler = function(event) {
 
@@ -46,20 +47,26 @@ let createTaskHandler = function(event) {
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
+    let purchaseAmount = document.querySelector("input[name='purchase-amount']").value;
+    
 
     let purchaseMadeEl = document.createElement("li");
-    purchaseMadeEl.className = "purchase-item";
+    purchaseMadeEl.className = "purchase-item"; 
+
+    //let pricePaidEl = document.createElement("div");
+    //pricePaidEl.className.createElement = ("div");
 
     let purchaseInfoEl = document.createAttribute("div");
     purchaseInfoEl.className = "purchase-info";
 
-    purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + purchaseInput + "</h3><span class='category'>" + purchaseTypeInput + "</span>";
+    
+    purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + purchaseInput + "</h3><h3 class='purchase-amount'>" + purchaseAmount +  "</h3><span class='category'>" + purchaseTypeInput + "</span>";
 
     purchaseEl.appendChild(purchaseMadeEl);
     console.log(purchaseEl);
 }
     
-formEl.addEventListener("submit", createTaskHandler); 
+
 
 
 
@@ -98,3 +105,6 @@ getGif();
 //     console.log("function called");
 // };
 // cal();
+
+
+formEl.addEventListener("submit", createTaskHandler); 
