@@ -30,9 +30,8 @@
         <div class="application">-->
            
       <header>
-           <h1 class="row card-panel page-title col 12 center">Easy Budget</h1>
-           <p class="">Click to add purcahse</p>
-           <form id="spend-form">
+           <h1 class="row col s12 m6 page-title center-align">Easy Budget</h1>
+           <form class="card-panel hoverable center-align" id="spend-form">
 
                 <div class="form-group">
                     <input type="text" name="purchase-name" class="text-input" placeholder="Enter Purchase"/>
@@ -65,15 +64,15 @@
                 </div>-->
                 
                 <div class="form-group">
-                    <button class="btn-floating btn-large pulse" id="save-purchase" type="submit">Add purchase</button>
+                    <button class="waves-effect waves-light btn pulse" id="save-purchase" type="submit">Add purchase</button>
                   </div>
 
             </form>
     </header>
 
     <main class="page-content">
-        <section class="purchase-list-wrapper">
-          <h2 class="list-title">All recent spending</h2>
+        <section class="row container card-panel hoverable purchase-list-wrapper col s6">
+          <h2 class="list-title">Recent Purchases</h2>
           <ul class="spend" id="purchase">
              <li class="purchase-item">A new purchase goes here!</li>
     
@@ -86,7 +85,7 @@
             <div id="itemLookup" class="purchase-item">
             <h2>Search an item to view its price on Amazon.</h2>
             <input id="searchItem" placeholder="Enter item here."> 
-            <button class="btn-floating btn-large pulse" id="searchBtn">Search</button>
+            <button class="waves-effect waves-light btn pulse" id="searchBtn">View</button>
             <div class="error"></div>
             </div>
             <div id="amazonSearches">
@@ -100,7 +99,7 @@
 
 
       <footer>
-        &copy;2022 by Fantastic team of BudgetApp
+        &copy;2022 by Fantastic Team of BudgetApp
       </footer> 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -108,6 +107,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
-
-
-
