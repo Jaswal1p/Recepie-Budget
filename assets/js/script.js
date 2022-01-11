@@ -28,6 +28,7 @@ $("#submitBtn").click(function(){
         JSON.stringify("myBudget");
         localStorage.setItem("budget", budget);
         intro.setAttribute("class", "hide");
+        document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
         document.querySelector(".application").style.display="block";
     }
 })
@@ -61,40 +62,133 @@ let createTaskHandler = function(event) {
     
 formEl.addEventListener("submit", createTaskHandler); 
 
+// var getPrice = function(product){
+
+//     var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
 
 
 // Giphy API
 
 var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
-var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + gifApiKey + "&limit=20";
-var q = "happy";
-var getGif= function(){
+
+var getGif= function(categoryGif){
+var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + category + "&api_key=" + categoryGif + "&limit=20";
+
+var category = //what selected;
     fetch(gifurl)
     .then(function (response) {
         return response.json()
         .then(function(data){
             console.log(data);
-            
+
+            //drop down of options to select a gif. 
+            //add gif to the recent spending with list 
+        })
+        .catch(function (error) {
+            console.log(error)
+            var error = document.createElement('p');
+            error.textContent = "Error"
+            return;
         })
     })
 }
 getGif();
 
 
-{/* ADD TO INDEX FOR DATE LONG W CAL<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> */}
 
 
-// console.log(calendar);
-// fetch(calendar)
-//     .then(function(response){
-//         return response.json()
-//     })
-//     .then(function(data){
-//         console.log(data);
-//     })
 
-//calendar 
-// var cal = function(){
-//     console.log("function called");
-// };
-// cal();
+Price-Checker 
+var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
+var getPrice = function(product){
+
+    var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
+
+    fetch(priceurl)
+    .then(function(response){
+        return response.json()
+        .then(function(data){
+            console.log(data);
+            getPrice();
+                function getPrice (){
+                    var priceCheck = document.querySelector("#amazonSearches");
+                    priceCheck.innerHTML="";
+                    for (i = 0; i< 5; i++) {
+                        var cards = document.createElement("span");
+                        cards.className = "cards";
+
+                        // TODO: STYLE
+                        productEl = document.createElement("span");
+                        productEl.className = "cards";
+                        var product = document.querySelector("#amazonSearches");
+                        product = document.createElement("h4");
+                        title = data.search_results[i].title;
+                            var a = document.createElement("a");
+                            // TODO: ADD A CLASS AND HAVE THE CLASS HAVE NO TEXT DECORATION AS WELL AS ADD ATTRIBUTE FOR IT TO OPEN IN A NEW TAB. 
+                            var link = document.createTextNode(title);
+                            a.appendChild(link);
+                            a.href = data.search_results[i].link;
+                            a.innerHTML = title;
+                            productEl.appendChild(a);
+                            cards.appendChild(productEl)
+
+
+                        imageEl = document.createElement("span");
+                        imageEl.className = "cards";
+                        var image = document.createElement("img")
+                        // TODO: STYLE IMAGE SIZE (much smaller) 
+                        imageUrl = data.search_results[i].image;
+                        image.src=imageUrl;
+                        cards.appendChild(image);
+
+                        priceEl = document.createElement("span");
+                        priceEl.className = "cards";
+                        var price = document.querySelector("#amazonSearches");
+                        price = document.createElement("h4");
+                        itemPrice = data.search_results[i].price.raw;
+                        console.log(itemPrice);
+                        price.innerHTML = "Price: " + itemPrice;
+                        // priceEl.appendChild(price);
+                        cards.appendChild(price)
+                   
+                        priceCheck.appendChild(cards);
+                    }
+                }
+            //search_results -i , title, image, price - raw
+
+        })
+        .catch(function (error) {
+            console.log(error)
+            var error = document.createElement('p');
+            error.textContent = "Error"
+            search();
+            return;
+    
+    })
+}
+    )}
+
+
+$("#searchBtn").click(function(){
+
+    var mySearch = document.getElementById("searchItem").value;
+    var product= mySearch;
+    console.log(product);
+
+
+    var error = document.querySelector(".error");
+    error.style.display="none";
+    console.log("search click");
+    var mySearch = document.getElementById("searchItem");
+    console.log(mySearch.value)
+    if (mySearch.value == "" ) {
+        console.log("empty search");
+        document.getElementById("searchItem").value="";
+        error.textContent = "Please input an item.";
+        return;   
+    }
+    else{
+        getPrice(product);
+    } 
+})
+
