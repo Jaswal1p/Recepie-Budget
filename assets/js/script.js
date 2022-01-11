@@ -69,36 +69,36 @@ formEl.addEventListener("submit", createTaskHandler);
 
 // Giphy API
 
-var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+// var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
 
-var getGif= function(categoryGif){
-var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + category + "&api_key=" + categoryGif + "&limit=20";
+// var getGif= function(categoryGif){
+// var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + category + "&api_key=" + categoryGif + "&limit=20";
 
-var category = //what selected;
-    fetch(gifurl)
-    .then(function (response) {
-        return response.json()
-        .then(function(data){
-            console.log(data);
+// var category = //what selected;
+//     fetch(gifurl)
+//     .then(function (response) {
+//         return response.json()
+//         .then(function(data){
+//             console.log(data);
 
-            //drop down of options to select a gif. 
-            //add gif to the recent spending with list 
-        })
-        .catch(function (error) {
-            console.log(error)
-            var error = document.createElement('p');
-            error.textContent = "Error"
-            return;
-        })
-    })
-}
-getGif();
-
-
+//             //drop down of options to select a gif. 
+//             //add gif to the recent spending with list 
+//         })
+//         .catch(function (error) {
+//             console.log(error)
+//             var error = document.createElement('p');
+//             error.textContent = "Error"
+//             return;
+//         })
+//     })
+// }
+// getGif();
 
 
 
-Price-Checker 
+
+
+// Price-Checker 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 var getPrice = function(product){
 
@@ -154,7 +154,6 @@ var getPrice = function(product){
                         priceCheck.appendChild(cards);
                     }
                 }
-            //search_results -i , title, image, price - raw
 
         })
         .catch(function (error) {
