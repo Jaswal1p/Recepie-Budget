@@ -122,8 +122,8 @@ let createTaskHandler = function(event) {
 
 
 formEl.addEventListener("submit", createTaskHandler); 
-=======
-Price-Checker 
+
+// Price-Checker 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 var getPrice = function(product){
 
