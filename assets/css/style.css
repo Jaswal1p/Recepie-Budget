@@ -7,6 +7,13 @@ body{
     background-color:rgb(192, 246, 253);
 }
 
+#remaining {
+    font-weight: bold;
+}
+
+.input-field{
+    
+}
 
 /* .hide{
     display: none;
