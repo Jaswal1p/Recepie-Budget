@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon1.ico">
     <title>Easy Budgeting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
@@ -30,9 +30,9 @@
         <div class="application">-->
            
       <header>
-           <h1 class="page-title">Easy Budget</h1>
+           <h1 class="row container page-title">Easy Budget</h1>
        <!--<h2 id="remaining"></h2>-->
-           <p>Click to add purcahse</p>
+           <p class="">Click to add purcahse</p>
            <form id="spend-form">
 
                 <div class="form-group">
@@ -66,7 +66,7 @@
                 </div>-->
                 
                 <div class="form-group">
-                    <button class="btn" id="save-purchase" type="submit">Add purchase</button>
+                    <button class="btn-floating btn-large pulse" id="save-purchase" type="submit">Add purchase</button>
                   </div>
 
             </form>
@@ -81,13 +81,13 @@
             </ul> 
         </section>
 
-        <section class="purchase-list-wrapper" id="price">
+        <section class="row container card-panel hoverable purchase-list-wrapper col s6" id="price">
           <h2 class="access">Price Checker</h2>
           <div class="spend" id="search">
             <div id="itemLookup" class="purchase-item">
             <h2>Search an item to view its price on Amazon.</h2>
             <input id="searchItem" placeholder="Enter item here."> 
-            <button id="searchBtn">Submit</button>
+            <button class="btn-floating btn-large pulse" id="searchBtn">Search</button>
             <div class="error"></div>
             </div>
             <div id="amazonSearches">
@@ -103,23 +103,10 @@
       <footer>
         &copy;2022 by Fantastic team of BudgetApp
       </footer> 
-    
 
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </div>
-<!--     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <script type="text/javascript" src="js/materialize.min.js"></script>-->
-    
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-
     <script src="./assets/js/script.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
 

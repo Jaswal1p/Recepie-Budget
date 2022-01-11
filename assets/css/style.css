@@ -6,7 +6,7 @@ body{
     background-color:rgb(192, 246, 253);
 }
 
-.hide{
+/* .hide{
     display: none;
     padding: 0;
 }
@@ -232,7 +232,7 @@ footer {
   .select-status option {
     font-weight: normal;
     font-size: 2rem;
-}
+} */
 
 @media screen and (max-width: 980px) {
     form .form-group {
