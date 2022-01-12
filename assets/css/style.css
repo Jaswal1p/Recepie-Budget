@@ -178,13 +178,15 @@ form .form-group {
     background: var(--secondary);
     color: #fff;
 }
-  
+
+
+
 .select-dropdown,
   .select-status {
     display: inline-block;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     color: #444;
-    padding: 0 2px 0 10px;
+    padding: 0 2px 0 15px;
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -206,6 +208,12 @@ form .form-group {
     width: auto;
 
 }
+
+.text-input {
+    padding: 0 2px 0 15px !important;
+    
+
+}    
 
 .select-dropdown::-ms-expand,
   .select-status::-ms-expand {
