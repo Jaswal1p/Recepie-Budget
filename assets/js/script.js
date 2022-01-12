@@ -65,19 +65,17 @@ let createTaskHandler = function(event) {
     
     formEl.reset();
     emptyListFiller.setAttribute("class", "hide");
+
     var list = document.createElement("div");
     list.className=("purchase-item")
 
     let purchaseMadeEl = document.createElement("div");
-    // var purchaseMadeEl = purchaseMadeLi.createElement("div")
     purchaseMadeEl.className = "purchase-info"; 
 
     let pricePaidEl = document.createElement("div");
-    // var pricePaidEl = pricePaidLi.createElement("div")
     pricePaidEl.className = "purchase-info"
 
     let purchaseInfoEl = document.createElement("div");
-    // var purchaseInfoEl = purchaseInfoLi.createElement("div");
     purchaseInfoEl.className = "purchase-info";
 
     
@@ -201,51 +199,96 @@ $("#searchBtn").click(function(){
 
 function renderSearchHistory(){
     let purchaseEl = document.querySelector("#purchase");
-    let purchaseMadeEl = document.createElement("li");
-    purchaseMadeEl.className = "purchase-item"; 
 
+    var list = document.createElement("div");
+    list.className=("purchase-item");
+
+    let purchaseMadeEl = document.createElement("div");
+    purchaseMadeEl.className = "purchase-info"; 
+   
+    let pricePaidEl = document.createElement("div");
+    pricePaidEl.className = "purchase-info"
+   
+    let purchaseInfoEl = document.createElement("div");
+    purchaseInfoEl.className = "purchase-info";
+   
     if (purchaseList.length<1){
         return
     }
     purchaseEl.innerHTML="";
-//     for (var i=0; i<purchaseList.length; i=i+3){
+    for (var i=0; i<purchaseList.length; i=i+3){
 
-//         var purchaseName = purchaseList[i]; 
-//         console.log(purchaseName);
+        var purchaseName = purchaseList[i]; 
+        console.log(purchaseName);
 
-//         purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
-//         purchaseName; 
+        let purchaseMadeEl = document.createElement("div");
+        purchaseMadeEl.className.createElement = ("div");
 
-//         purchaseEl.appendChild(purchaseMadeEl);
-//         console.log(purchaseEl);
-//     } 
-//     for (var i=1; i<purchaseList.length; i=i+3){
+        purchaseMadeEl.innerHTML="</h3><h3 class='purchase-name'>" +
+        purchaseName
+        list.appendChild(purchaseMadeEl);
 
-//         var purchasePrice = purchaseList[i]; 
-//         console.log(purchasePrice);
 
-//         let pricePaidEl = document.createElement("div");
-//         pricePaidEl.className.createElement = ("div");
+        var purchasePrice = purchaseList[i+1]; 
+        console.log(purchasePrice);
 
-//         purchaseMadeEl.innerHTML="</h3><h3 class='price'>" + 
-//         purchasePrice
+        let pricePaidEl = document.createElement("div");
+        pricePaidEl.className.createElement = ("div");
 
-//         purchaseEl.appendChild(purchaseMadeEl);
-//         console.log(purchaseEl);
+        pricePaidEl.innerHTML="</h3><h3 class='price'>" + "<span>$ </span>" +
+        purchasePrice
+        list.appendChild(pricePaidEl);
 
-//     }  
-//     for (var i=2; i<purchaseList.length; i=i+3){
+        var purchaseType = purchaseList[i+2]; 
+        console.log(purchaseType);
 
-//         var purchaseType = purchaseList[i]; 
-//         console.log(purchaseType);
+        let purchaseInfoEl = document.createElement("div");
+        purchaseInfoEl.className = "purchase-info";
 
-//         let purchaseInfoEl = document.createAttribute("div");
-//         purchaseInfoEl.className = "purchase-info";
+        purchaseInfoEl.innerHTML = "</h3><span class='category'>" + purchaseType + "</span>";
+        list.appendChild(purchaseInfoEl);
 
-//         purchaseMadeEl.innerHTML="</h3><span class='category'>" + 
-//         purchaseType + "</span>";
+        purchaseEl.appendChild(list) 
 
-//         purchaseEl.appendChild(purchaseMadeEl);
-//         console.log(purchaseEl);
-//     } 
+
+    } 
+
+    // for (var i=1; i<purchaseList.length; i=i+3){
+
+    //     var purchasePrice = purchaseList[i]; 
+    //     console.log(purchasePrice);
+
+    //     let pricePaidEl = document.createElement("div");
+    //     pricePaidEl.className.createElement = ("div");
+
+    //     pricePaidEl.innerHTML="</h3><h3 class='price'>" + "<span>$ </span>" +
+    //     purchasePrice
+    //     list.appendChild(pricePaidEl);
+       
+    // }  
+    // for (var i=2; i<purchaseList.length; i=i+3){
+
+    //     var purchaseType = purchaseList[i]; 
+    //     console.log(purchaseType);
+
+    //     let purchaseInfoEl = document.createElement("div");
+    //     purchaseInfoEl.className = "purchase-info";
+
+    //     purchaseInfoEl.innerHTML = "</h3><span class='category'>" + purchaseType + "</span>";
+    //     list.appendChild(purchaseInfoEl);
+
+    // } 
+
  }
+
+
+
+
+ 
+
+
+
+
+
+
+
