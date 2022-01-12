@@ -5,15 +5,9 @@ console.log(purchaseEl);
 let emptyListFiller = document.querySelector(".purchase-item")
 
 var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
+console.log(purchaseList);
 
-if (purchaseList === null){
-    var purchaseList = []
-}
-else {
-    var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
-}
-
-renderSearchHistory;
+renderSearchHistory();
 
 // var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
@@ -99,7 +93,7 @@ let createTaskHandler = function(event) {
     purchaseList.push(purchaseInput);
     purchaseList.push(purchaseAmountInput);
     purchaseList.push(purchaseTypeInput);
-    localStorage.setItem("purchaseHsitory", JSON.stringify(purchaseList));
+    localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
 }
     
 
@@ -222,3 +216,4 @@ function renderSearchHistory(){
     }
     purchaseEl.innerHTML="";
 }
+    
