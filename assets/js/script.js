@@ -2,6 +2,12 @@ let formEl = document.querySelector("#spend-form");
 console.log(formEl);
 let purchaseEl = document.querySelector("#purchase");
 console.log(purchaseEl);
+let emptyListFiller = document.querySelector(".purchase-item")
+
+var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
+console.log(purchaseList);
+
+renderSearchHistory();
 
 // var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
@@ -57,11 +63,13 @@ let createTaskHandler = function(event) {
     let purchaseAmountInput = document.querySelector("input[name='price']").value;
 
     if(!purchaseInput || !purchaseAmountInput || !purchaseTypeInput) {
+        //create element that says this message (no alerts allowed)
         alert("Please fill all fields");
         return false;
     }
     
     formEl.reset();
+    emptyListFiller.setAttribute("class", "hide");
 
     let purchaseMadeEl = document.createElement("li");
     purchaseMadeEl.className = "purchase-item"; 
@@ -80,6 +88,11 @@ let createTaskHandler = function(event) {
 
     purchaseEl.appendChild(purchaseMadeEl);
     console.log(purchaseEl);
+
+    purchaseList.push(purchaseInput);
+    purchaseList.push(purchaseAmountInput);
+    purchaseList.push(purchaseTypeInput);
+    localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
 }
     
 
@@ -91,28 +104,6 @@ let createTaskHandler = function(event) {
 
 // Giphy API
 
-
-// var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
-// var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + gifApiKey + "&//limit=20";
-// var q = "happy";
-// var getGif= function(){
-//    fetch(gifurl)
-//    .then(function (response) {
-//      return response.json()
-//      .then(function(data){
-    //          console.log(data);
-            
-//        })
-//    })
-//}
-//  getGif();
-
-
-
-
-
-
-
 //calendar 
 // var cal = function(){
 //     console.log("function called");
@@ -123,9 +114,11 @@ let createTaskHandler = function(event) {
 formEl.addEventListener("submit", createTaskHandler); 
 
 
+
 Price-Checker 
 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
+
 var getPrice = function(product){
 
     var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
@@ -150,9 +143,9 @@ var getPrice = function(product){
                         product = document.createElement("h4");
                         title = data.search_results[i].title;
                             var a = document.createElement("a");
-                            // TODO: ADD A CLASS AND HAVE THE CLASS HAVE NO TEXT DECORATION AS WELL AS ADD ATTRIBUTE FOR IT TO OPEN IN A NEW TAB. 
                             var link = document.createTextNode(title);
                             a.appendChild(link);
+                            a.setAttribute("target", "_blank");
                             a.href = data.search_results[i].link;
                             a.innerHTML = title;
                             productEl.appendChild(a);
@@ -169,18 +162,17 @@ var getPrice = function(product){
 
                         priceEl = document.createElement("span");
                         priceEl.className = "cards";
-                        var price = document.querySelector("#amazonSearches");
-                        price = document.createElement("h4");
+                        var cost = document.querySelector("#amazonSearches");
+                        cost = document.createElement("h4");
                         itemPrice = data.search_results[i].price.raw;
                         console.log(itemPrice);
-                        price.innerHTML = "Price: " + itemPrice;
-                        // priceEl.appendChild(price);
-                        cards.appendChild(price)
+                        cost.innerHTML = "Price: " + itemPrice;
+                        // priceEl.appendChild(cost);
+                        cards.appendChild(cost)
                    
                         priceCheck.appendChild(cards);
                     }
                 }
-            //search_results -i , title, image, price - raw
 
         })
         .catch(function (error) {
@@ -217,3 +209,36 @@ $("#searchBtn").click(function(){
         getPrice(product);
     } 
 })
+
+
+
+function renderSearchHistory(){
+    if (purchaseList.length<1){
+        return
+    }
+    purchaseEl.innerHTML="";
+    // for (i=0; i<purchaseList.length; i+2){
+        console.log(purchaseList.length);
+
+    } 
+
+    
+
+// let purchaseMadeEl = document.createElement("li");
+// purchaseMadeEl.className = "purchase-item"; 
+
+// //let pricePaidEl = document.createElement("div");
+// //pricePaidEl.className.createElement = ("div");
+
+// let purchaseInfoEl = document.createAttribute("div");
+// purchaseInfoEl.className = "purchase-info";
+
+
+// purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
+// purchaseInput + "</h3><h3 class='price'>" + 
+// currencySign + 
+// purchaseAmountInput +  "</h3><span class='category'>" + 
+// purchaseTypeInput + "</span>";
+
+// purchaseEl.appendChild(purchaseMadeEl);
+// console.log(purchaseEl);
