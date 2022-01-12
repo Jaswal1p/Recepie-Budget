@@ -103,19 +103,40 @@ let createTaskHandler = function(event) {
 
 
 // Giphy API
+var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+var getGif = function (categoryGif) {
+  var gifurl =
+    "https://api.giphy.com/v1/gifs/search?q=" +
+    categoryGif +
+    "&api_key=" +
+    gifApiKey +
+    "&limit=20";
 
-//calendar 
-// var cal = function(){
-//     console.log("function called");
-// };
-// cal();
+  var category = fetch(gifurl).then(function (response) { //what selected;
+    return response
+      .json()
+      .then(function (data) {
+        console.log(data);
+        //drop down of options to select a gif. IF STATEMENT
+        //add gif to the recent spending with list OPTIONS TO SELECT GIFS
+      })
+      .catch(function (error) {
+        console.log(error);
+        var error = document.createElement("p");
+        error.textContent = "Error";
+        return;
+      });
+  });
+};
+getGif();
+
 
 
 formEl.addEventListener("submit", createTaskHandler); 
 
 
 
-Price-Checker 
+// Price-Checker 
 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 
