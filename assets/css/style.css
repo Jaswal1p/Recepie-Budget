@@ -6,10 +6,6 @@ body{
     background-color:rgb(192, 246, 253);
 }
 
-.hide{
-    display: none;
-    padding: 0;
-}
 
 .enterBudget {
     position:absolute;
@@ -22,9 +18,9 @@ body{
 
 
 :root {
-    --primary: #d8d524;
-    --secondary: rgb(51, 51, 202);
-    --tertiary: rgb(192, 246, 253);
+    --primary: rgb(28, 53, 45);
+    --secondary: rgb(133, 187, 101);
+    --tertiary: rgb(216, 228, 188);
     --grey: rgb(14, 13, 13);
     font-size: 60%;
 } 
@@ -62,7 +58,7 @@ form {
     flex-wrap: wrap;
 }
   
-form input {
+/* form input {
     outline: none;
     border: none;
     padding: 12px;
@@ -70,73 +66,70 @@ form input {
     font-size: 2.2rem;
     border: 2px solid var(--grey);
     border-radius: 12px;
-}
+} */
   
 form .form-group {
     margin: 10px 6px 10px 0;
     flex: 1;
-}
-
-footer {
-    width: 100%;
-    background: var(--secondary);
-    color: var(--tertiary);
-    font-size: 2.4rem;
-    padding: 20px;
-    border-top: 5px solid var(--primary);
 }
   
 .page-title {
     color: var(--primary);
     margin-bottom: 5px;
     margin-top: 0;
-    font-size: 4.5rem;
+    font-size: 50px;
 }
-  
+
 .page-content {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 25px auto;
-    width: 95%;
+    border-spacing: 15 px30px;
+}
+
+.price {
+    font-size: 20px;
 }
 
 .purchase-list-wrapper {
-    flex:1;
+    flex: 1;
     margin: 0 20px 20px;
 }
 
 .list-title, .access {
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 .spend {
     list-style: none;
-    padding: 15px;
+    padding: 15px 15px;
     height: calc(100% - 50px);
     background: rgb(196, 196, 196);
     border-radius: 12px;
     border: 2px solid var(--grey);
 }
 
+#spend-form {
+    align-items: center;
+    border-radius: 25px;
+}
+
 .purchase-item {
-    color: var(--grey);
+    color: var(--primary);
     padding: 15px 15px;
     border: 2px solid var(--grey);
-    background: var(--tertiary);
+    background: white;
     border-radius: 12px;
     margin-bottom: 20px;
   }
 
 .purchase-name {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 30px;
 }
 
 .category {
-    color: var(--secondary);
-    font-size: 1.55rem;
+    font-size: 20px;
 }
 
 .task-actions {
@@ -232,9 +225,18 @@ footer {
   .select-status option {
     font-weight: normal;
     font-size: 2rem;
+} 
+
+footer {
+    color: var(--primary);
+    background: var(--secondary);
+    font-size: 15px;
+    width: 100%;
+    padding: 20px;
+    border-top: 5px solid var(--primary);
 }
 
-@media screen and (max-width: 980px) {
+/* @media screen and (max-width: 980px) {
     form .form-group {
       flex: 1 100%;
     }
@@ -247,4 +249,4 @@ footer {
       flex-basis: 100%;
     }
   
-}
+} */
