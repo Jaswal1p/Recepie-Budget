@@ -7,6 +7,8 @@ let emptyListFiller = document.querySelector(".purchase-item")
 var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
 console.log(purchaseList);
 
+let gifEl = document.querySelector("#gif");
+
 renderSearchHistory();
 
 // var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
