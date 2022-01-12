@@ -56,7 +56,7 @@ let createTaskHandler = function(event) {
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
 
-    let currencySign = document.getElementById("dollar");
+    //let currencySign = document.getElementById("dollar");
 
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
 
@@ -82,8 +82,7 @@ let createTaskHandler = function(event) {
 
     
     purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
-    purchaseInput + "</h3><h3 class='price'>" + 
-    currencySign + 
+    purchaseInput + "</h3><h3 class='price'>" + "<span>$ </span>" +
     purchaseAmountInput +  "</h3><span class='category'>" + 
     purchaseTypeInput + "</span>";
 
@@ -115,8 +114,11 @@ let createTaskHandler = function(event) {
 formEl.addEventListener("submit", createTaskHandler); 
 
 
-// Price-Checker 
-// var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
+
+Price-Checker 
+
+var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
+
 var getPrice = function(product){
 
     var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
