@@ -116,7 +116,7 @@ formEl.addEventListener("submit", createTaskHandler);
 
 
 // Price-Checker 
-var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
+// var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 var getPrice = function(product){
 
     var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
@@ -215,5 +215,28 @@ function renderSearchHistory(){
         return
     }
     purchaseEl.innerHTML="";
-}
+    // for (i=0; i<purchaseList.length; i+2){
+        console.log(purchaseList.length);
+
+    } 
+
     
+
+// let purchaseMadeEl = document.createElement("li");
+// purchaseMadeEl.className = "purchase-item"; 
+
+// //let pricePaidEl = document.createElement("div");
+// //pricePaidEl.className.createElement = ("div");
+
+// let purchaseInfoEl = document.createAttribute("div");
+// purchaseInfoEl.className = "purchase-info";
+
+
+// purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
+// purchaseInput + "</h3><h3 class='price'>" + 
+// currencySign + 
+// purchaseAmountInput +  "</h3><span class='category'>" + 
+// purchaseTypeInput + "</span>";
+
+// purchaseEl.appendChild(purchaseMadeEl);
+// console.log(purchaseEl);
