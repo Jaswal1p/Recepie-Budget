@@ -84,7 +84,7 @@ form .form-group {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    padding 15px;
+    border-spacing: 15 px30px;
 }
 
 .price {
@@ -92,9 +92,8 @@ form .form-group {
 }
 
 .purchase-list-wrapper {
-    flex:1;
+    flex: 1;
     margin: 0 20px 20px;
-    padding: 20px;
 }
 
 .list-title, .access {
