@@ -16,6 +16,23 @@ body{
     padding:25px;
 }
 
+.enter{
+    background-color: white;
+    margin:10px 600px;
+    display:block;
+    padding: 10px;
+    border-radius:12px;
+}
+
+#resetBudget {
+    float:right;
+    margin:0;
+    border-radius:10px;
+}
+#submitBtn {
+    border-radius:10px;
+}
+
 
 :root {
     --primary: rgb(28, 53, 45);
