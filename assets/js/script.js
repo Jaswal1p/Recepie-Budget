@@ -252,33 +252,6 @@ function renderSearchHistory(){
 
 
     } 
-
-    // for (var i=1; i<purchaseList.length; i=i+3){
-
-    //     var purchasePrice = purchaseList[i]; 
-    //     console.log(purchasePrice);
-
-    //     let pricePaidEl = document.createElement("div");
-    //     pricePaidEl.className.createElement = ("div");
-
-    //     pricePaidEl.innerHTML="</h3><h3 class='price'>" + "<span>$ </span>" +
-    //     purchasePrice
-    //     list.appendChild(pricePaidEl);
-       
-    // }  
-    // for (var i=2; i<purchaseList.length; i=i+3){
-
-    //     var purchaseType = purchaseList[i]; 
-    //     console.log(purchaseType);
-
-    //     let purchaseInfoEl = document.createElement("div");
-    //     purchaseInfoEl.className = "purchase-info";
-
-    //     purchaseInfoEl.innerHTML = "</h3><span class='category'>" + purchaseType + "</span>";
-    //     list.appendChild(purchaseInfoEl);
-
-    // } 
-
  }
 
 
