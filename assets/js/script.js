@@ -35,6 +35,8 @@ $("#submitBtn").click(function(){
     document.getElementById('submitBtn').setAttribute("class", "hide");
     document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
     console.log("your budget is " + budget);
+    
+    return budget 
 
  } )}
 
@@ -44,6 +46,8 @@ $("#submitBtn").click(function(){
    document.getElementById('submitBtn').setAttribute("class", "hide");
    document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
    console.log("your budget is " + budget);
+
+   return budget
 
 }
 
