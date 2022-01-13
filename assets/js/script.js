@@ -15,10 +15,13 @@ renderSearchHistory();
 //If budget exists, do not generate a new budget.
 
 function setBudget(){
+
  if (localStorage.getItem("budget") === null) {
         var budget=[];
 
 $("#submitBtn").click(function(){
+    var budget=[];
+
     
    console.log("click")
    var myBudget = document.getElementById("setLimit").value;
@@ -27,7 +30,11 @@ $("#submitBtn").click(function(){
     budget.push(myBudget);
     localStorage.setItem("budget", budget);
 
-
+    var budget = localStorage.getItem("budget");
+    document.getElementById('setLimit').setAttribute("class", "hide");
+    document.getElementById('submitBtn').setAttribute("class", "hide");
+    document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
+    console.log("your budget is " + budget);
 
  } )}
 
@@ -39,11 +46,6 @@ $("#submitBtn").click(function(){
    console.log("your budget is " + budget);
 
 }
-// var budget = localStorage.getItem("budget");
-// document.getElementById('setLimit').setAttribute("class", "hide");
-// document.getElementById('submitBtn').setAttribute("class", "hide");
-// document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
-// console.log("your budget is " + budget);
 
 }
 setBudget();
