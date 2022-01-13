@@ -14,8 +14,7 @@ renderSearchHistory();
 
 //If budget exists, do not generate a new budget.
 
-function setBudget(){
-
+// function setBudget(){ 
  if (localStorage.getItem("budget") === null) {
         var budget=[];
 
@@ -35,8 +34,7 @@ $("#submitBtn").click(function(){
     document.getElementById('submitBtn').setAttribute("class", "hide");
     document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
     console.log("your budget is " + budget);
-    
-    return budget 
+
 
  } )}
 
@@ -44,15 +42,14 @@ $("#submitBtn").click(function(){
    var budget = localStorage.getItem("budget");
    document.getElementById('setLimit').setAttribute("class", "hide");
    document.getElementById('submitBtn').setAttribute("class", "hide");
-   document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
+   document.getElementById('enterBudget').innerHTML="Your remaining budget is $" + budget;
    console.log("your budget is " + budget);
 
-   return budget
-
 }
+// }
+// setBudget()
 
-}
-setBudget();
+
 
 
 // Add purchase to spending list 
@@ -113,7 +110,14 @@ let createTaskHandler = function(event) {
     purchaseList.push(purchaseTypeInput);
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
 
-    
+    console.log(purchaseAmountInput);
+    console.log(budget);
+    budget = budget - purchaseAmountInput;
+    console.log(budget)
+    document.getElementById('enterBudget').textContent="Your remaining budget is " + budget;
+    console.log(document.getElementById('enterBudget').textContent="Your remaining budget is " + budget)
+
+
 
       var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
       
