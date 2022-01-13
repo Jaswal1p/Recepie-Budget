@@ -159,11 +159,11 @@ let createTaskHandler = function (event) {
                 console.log(data);
                 console.log(data.data[0].url);
 
-                imageEl = document.createElement("img");
+                var imageEl = document.createElement("img");
                 imgUrl = data.data[0].images.fixed_height.url;
                 imageEl.src = imgUrl;
-                var spendEl = document.querySelector(".purchase-item");
-                spendEl.appendChild(imageEl);
+                list.appendChild(imageEl);
+                return imageEl;
 
             })
             .catch(function (error) {
@@ -277,22 +277,7 @@ $("#searchBtn").click(function () {
 
 
 function renderSearchHistory() {
-    // let purchaseEl = document.querySelector("#purchase");
-    
-    // var overall = document.createElement("div");
-    // overall.className = ()
 
-    // var list = document.createElement("div");
-    // list.className = ("purchase-item");
-
-    // let purchaseMadeEl = document.createElement("div");
-    // purchaseMadeEl.className = "purchase-info";
-
-    // let pricePaidEl = document.createElement("div");
-    // pricePaidEl.className = "purchase-info"
-
-    // let purchaseInfoEl = document.createElement("div");
-    // purchaseInfoEl.className = "purchase-info";
 
     if (purchaseList.length < 1) {
         return
@@ -301,8 +286,6 @@ function renderSearchHistory() {
     for (var i = 0; i < purchaseList.length; i = i + 3) {
 
         let purchaseEl = document.querySelector("#purchase");
-    
-
     
         var list = document.createElement("div");
         list.className = ("purchase-item");
