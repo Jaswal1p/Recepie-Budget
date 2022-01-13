@@ -12,9 +12,7 @@ let gifEl = document.querySelector("#gif");
 renderSearchHistory();
 
 
-//If budget exists, do not generate a new budget.
 
-// function setBudget(){ 
  if (localStorage.getItem("budget") === null) {
         var budget=[];
 
@@ -42,12 +40,24 @@ $("#submitBtn").click(function(){
    var budget = localStorage.getItem("budget");
    document.getElementById('setLimit').setAttribute("class", "hide");
    document.getElementById('submitBtn').setAttribute("class", "hide");
-   document.getElementById('enterBudget').innerHTML="Your remaining budget is $" + budget;
-   console.log("your budget is " + budget);
+   if (budget > 0){
+    document.getElementById('enterBudget').innerHTML="Your remaining budget is $" + budget;
+    console.log("your budget is " + budget);
+   }
+   else if (budget === 0) {
+    document.getElementById("enterBudget").setAttribute("color", "red")
+
+    document.getElementById("enterBudget").innerHTML = "Oh No! You have spent all your money. Please click 'Set New Budget' to create a new budget."
+   }
+    else {
+        document.getElementById("enterBudget").setAttribute("color", "red")
+
+    document.getElementById("enterBudget").innerHTML = "Oh No! You went over budget with your recent purchase. You are currently $" +Math.abs(budget) + " over budget. Please click 'Set New Budget' to create a new budget."
 
 }
-// }
-// setBudget()
+
+}
+
 
 
 
@@ -110,12 +120,17 @@ let createTaskHandler = function(event) {
     purchaseList.push(purchaseTypeInput);
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
 
+
     console.log(purchaseAmountInput);
     console.log(budget);
     budget = budget - purchaseAmountInput;
     console.log(budget)
+    localStorage.setItem("budget", budget);
     document.getElementById('enterBudget').textContent="Your remaining budget is " + budget;
-    console.log(document.getElementById('enterBudget').textContent="Your remaining budget is " + budget)
+    console.log(document.getElementById('enterBudget').textContent="Your remaining budget is " + budget);
+
+
+
 
 
 
