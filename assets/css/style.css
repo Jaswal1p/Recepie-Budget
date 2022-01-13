@@ -52,20 +52,6 @@ p, li {
     font-size: 1.6rem;
 }
 
-ul li
-{
-    max-height:150px;
-}
-
-ul li img
-{
-    max-width:50px;
-    max-height:50px; 
-    margin-top: 0px;
-    margin-left: 0px;
-    float:right;
-}
-
 form {
     display: flex;
     align-items: flex-end;
