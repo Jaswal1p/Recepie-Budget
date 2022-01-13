@@ -101,21 +101,25 @@ let createTaskHandler = function(event) {
       
       console.log(purchaseInput);
 
-      var getGif = function (purchaseInput) {
+      
         var gifurl =
           "https://api.giphy.com/v1/gifs/search?q=" +
           purchaseInput +
           "&api_key=" +
           gifApiKey +
           "&limit=1";
-
-        var category = fetch(gifurl).then(function (response) {
+        console.log(gifurl);
+        // var category = fetch(gifurl).then(function (response) {
+            fetch(gifurl).then(function (response) {
           return response
             .json()
             .then(function (data) {
               console.log(data);
               console.log(data.data[0].url);
+            
+            //   function getGif() {
 
+            //   }
               
             })
             .catch(function (error) {
@@ -126,8 +130,6 @@ let createTaskHandler = function(event) {
             });
         });
       };
-      getGif();
-    }
 
 
 
