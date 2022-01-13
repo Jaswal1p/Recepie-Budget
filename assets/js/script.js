@@ -12,6 +12,7 @@ let gifEl = document.querySelector("#gif");
 renderSearchHistory();
 
 
+//Set/Get Budget
 
 if (localStorage.getItem("budget") === null) {
     var budget = [];
@@ -58,13 +59,7 @@ $("#resetBudget").click(function () {
     window.location.reload();
 })
 
-
-
-// Add purchase to spending list 
-// document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
-
-
-
+// Submit Form 
 let createTaskHandler = function (event) {
 
     event.preventDefault();
@@ -176,6 +171,7 @@ let createTaskHandler = function (event) {
 };
 
 
+// Click Submit Form 
 formEl.addEventListener("submit", createTaskHandler);
 
 
@@ -276,6 +272,7 @@ $("#searchBtn").click(function () {
 })
 
 
+// Get purchase log history
 function renderSearchHistory() {
 
 
