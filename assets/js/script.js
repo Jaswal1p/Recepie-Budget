@@ -12,7 +12,7 @@ renderSearchHistory();
 
 //If budget exists, do not generate a new budget.
 
-
+function setBudget(){
  if (localStorage.getItem("budget") === null) {
         var budget=[];
 
@@ -23,14 +23,28 @@ $("#submitBtn").click(function(){
    console.log(myBudget)
 
     budget.push(myBudget);
-    JSON.stringify("myBudget");
     localStorage.setItem("budget", budget);
+
+
+
  } )}
 
   else {
    var budget = localStorage.getItem("budget");
-   console.log("your budget is " + budget)
+   document.getElementById('setLimit').setAttribute("class", "hide");
+   document.getElementById('submitBtn').setAttribute("class", "hide");
+   document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
+   console.log("your budget is " + budget);
+
 }
+// var budget = localStorage.getItem("budget");
+// document.getElementById('setLimit').setAttribute("class", "hide");
+// document.getElementById('submitBtn').setAttribute("class", "hide");
+// document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
+// console.log("your budget is " + budget);
+
+}
+setBudget();
 
 
 // Add purchase to spending list 
