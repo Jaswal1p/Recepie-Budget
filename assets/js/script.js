@@ -33,7 +33,6 @@ $("#submitBtn").click(function(){
     document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
     console.log("your budget is " + budget);
 
-
  } )}
 
   else {
@@ -45,20 +44,18 @@ $("#submitBtn").click(function(){
     console.log("your budget is " + budget);
    }
    else if (budget === 0) {
-    document.getElementById("enterBudget").setAttribute("color", "red")
-
     document.getElementById("enterBudget").innerHTML = "Oh No! You have spent all your money. Please click 'Set New Budget' to create a new budget."
    }
     else {
-        document.getElementById("enterBudget").setAttribute("color", "red")
-
-    document.getElementById("enterBudget").innerHTML = "Oh No! You went over budget with your recent purchase. You are currently $" +Math.abs(budget) + " over budget. Please click 'Set New Budget' to create a new budget."
+        document.getElementById("enterBudget").innerHTML = "Oh No! You went over budget with your recent purchase. You are currently $" +Math.abs(budget) + " over budget. Please click 'Set New Budget' to create a new budget."
 
 }
-
 }
 
-
+$("#resetBudget").click(function(){
+    localStorage.removeItem("budget");
+    window.location.reload();
+})
 
 
 
@@ -120,14 +117,28 @@ let createTaskHandler = function(event) {
     purchaseList.push(purchaseTypeInput);
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
 
+    var budget = localStorage.getItem("budget");
+
 
     console.log(purchaseAmountInput);
     console.log(budget);
     budget = budget - purchaseAmountInput;
     console.log(budget)
     localStorage.setItem("budget", budget);
-    document.getElementById('enterBudget').textContent="Your remaining budget is " + budget;
-    console.log(document.getElementById('enterBudget').textContent="Your remaining budget is " + budget);
+
+    if (budget > 0){
+        document.getElementById('enterBudget').innerHTML="Your remaining budget is $" + budget;
+        console.log("your budget is " + budget);
+       }
+       else if (budget === 0) {
+        document.getElementById("enterBudget").innerHTML = "Oh No! You have spent all your money. Please click 'Set New Budget' to create a new budget."
+       }
+        else {
+            document.getElementById("enterBudget").innerHTML = "Oh No! You went over budget with your recent purchase. You are currently $" +Math.abs(budget) + " over budget. Please click 'Set New Budget' to create a new budget."
+    
+    }
+    // document.getElementById('enterBudget').textContent="Your remaining budget is " + budget;
+    // console.log(document.getElementById('enterBudget').textContent="Your remaining budget is " + budget);
 
 
 
