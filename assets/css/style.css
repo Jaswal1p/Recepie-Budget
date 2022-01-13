@@ -68,7 +68,7 @@ header p {
 p, li {
     font-size: 1.6rem;
 }
-  
+
 form {
     display: flex;
     align-items: flex-end;
@@ -89,7 +89,8 @@ form .form-group {
     margin: 10px 6px 10px 0;
     flex: 1;
 }
-  
+
+ 
 .page-title {
     color: var(--primary);
     margin-bottom: 5px;
@@ -124,7 +125,7 @@ form .form-group {
 
 .spend {
     list-style: none;
-    padding: 15px 15px;
+    padding: 15px 15px !important;
     height: calc(100% - 50px);
     background: rgb(196, 196, 196);
     border-radius: 12px;
@@ -200,15 +201,18 @@ form .form-group {
     background: var(--secondary);
     color: #fff;
 }
-  
+
+
+
 .select-dropdown,
   .select-status {
     display: inline-block;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     color: #444;
-    padding: 12px;
-    width: 80%;
+    padding: 0 2px 0 15px;
+    width: 100%;
     max-width: 100%;
+    height: 33px;
     margin: 0;
     border: 2px solid var(--grey);
     border-radius: 12px;
@@ -228,6 +232,15 @@ form .form-group {
     width: auto;
 
 }
+
+.text-input {
+    padding: 0 2px 0 15px !important;
+    width: 90% !important;
+    border: 2px solid var(--grey) !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+
+}    
 
 .select-dropdown::-ms-expand,
   .select-status::-ms-expand {
