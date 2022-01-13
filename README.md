@@ -19,13 +19,13 @@ SO THAT I can see my remaining budget
 
 <a href="">Link to Website </a>
 <br>
-<a href="">Link to Repository </a>
+<a href="https://github.com/Jaswal1p/Recepie-Budget">Link to Repository </a>
 <br>
 <a href="">Link to Portfolio - Marika DiCarlo</a>
 <br>
 <a href="">Link to Portfolio - Bobby Jaswal</a>
 <br>
-<a href="">Link to Portfolio - Kate Spitalnic</a>
+<a href="https://kspitalnic.github.io/portfoliochallenge/">Link to Portfolio - Kate Spitalnic</a>
 <br>
 <br>
 
