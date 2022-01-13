@@ -48,7 +48,6 @@
       <div id="dollar" class="sign">$</div>
 
       <div class="form-group">
-        <!-- <span class="currency" style="position: absolute; font-size: 10px; margin-left: 10px; margin-top: 10px;">$</span> -->
 
         <input type="text" name="price" class="text-input" placeholder="Enter Amount">
       </div>
@@ -65,11 +64,60 @@
       </div>
 
       <!--<div class="row form-group">
+           
+      <header>
+          <button id="resetBudget">Set New Budget</button>
+      </br>
+           <h1 class="row col s12 m6 page-title">Easy Budget</h1>
+           <div class="card-panelhoverable center-align form-group enter">Enter your budget!
+            <input type="number" name="purchase-name" class="text-input" placeholder="Enter Purchase"/>
+            <button id="submitBtn">Submit</button>
+        </div>
+           <form class="card-panel hoverable center-align" id="spend-form">
+
+                <div class="form-group">
+                    <input type="text" name="purchase-name" class="text-input" id="purchase-name" placeholder="Enter Purchase"/>
+                </div>
+
+                <div class="form-group">
+                    <!-- <span class="currency" style="position: absolute; font-size: 10px; margin-left: 10px; margin-top: 10px;">$</span> -->
+
+<!--                     <input type="text" name="price" class="text-input" placeholder="Enter Amount">
+                </div>
+
+                <div class="form-group">
+                    <select name="category" class="select-dropdown">
+                        <option value="" disabled selected>Pick spend category</option>
+                        <option value="Grocery/Meals">Grocery/Meals</option>
+                        <option value="House/Home">Home/Apartment</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Fixed Payments">Recurring Payment</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </div> -->
+            
+                <!--<div class="row form-group">
                 <form class="row">
                     <div class="col s12">
                        <input type="date" class="datepicker">
                     </div>
                 </div>-->
+
+                
+                <div class="form-group">
+                    <button class="waves-effect waves-light btn pulse" id="save-purchase" type="submit">Add purchase</button>
+                  </div>
+
+            </form>
+    </header>
+
+    <main class="page-content">
+        <section class="row container card-panel hoverable purchase-list-wrapper col s6">
+          <h2 class="list-title">Recent Purchases</h2>
+          <ul class="spend" id="purchase">
+             <li class="purchase-item">A new purchase goes here!</li>
+             </ul> 
+        </section>
 
       <div class="form-group">
         <button class="waves-effect waves-light btn pulse" id="save-purchase" type="submit">Add purchase</button>

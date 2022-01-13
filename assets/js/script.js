@@ -7,6 +7,8 @@ let emptyListFiller = document.querySelector(".purchase-item")
 var purchaseList = JSON.parse(localStorage.getItem('purchaseHistory')) || []
 console.log(purchaseList);
 
+let gifEl = document.querySelector("#gif");
+
 renderSearchHistory();
 
 
@@ -58,6 +60,7 @@ let createTaskHandler = function(event) {
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
 
+
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
 
     let purchaseAmountInput = document.querySelector("input[name='price']").value;
@@ -103,11 +106,92 @@ let createTaskHandler = function(event) {
     purchaseList.push(purchaseAmountInput);
     purchaseList.push(purchaseTypeInput);
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
-}
+
     
+
+      var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+      
+      console.log(purchaseInput);
+
+      
+        var gifurl =
+          "https://api.giphy.com/v1/gifs/search?q=" +
+          purchaseInput +
+          "&api_key=" +
+          gifApiKey +
+          "&limit=1";
+        console.log(gifurl);
+        // var category = fetch(gifurl).then(function (response) {
+            fetch(gifurl).then(function (response) {
+          return response
+            .json()
+            .then(function (data) {
+              console.log(data);
+              console.log(data.data[0].url);
+                
+                imageEl = document.createElement("img");
+                imgUrl = data.data[0].images.fixed_height.url;
+                imageEl.src = imgUrl;
+                var spendEl = document.querySelector(".purchase-item");
+                spendEl.appendChild(imageEl);
+              
+            })
+            .catch(function (error) {
+              console.log(error);
+              var error = document.createElement("p");
+              error.textContent = "Error";
+              return;
+            });
+        });
+      };
+
+
+
+// var getPrice = function(product){
+
+//     var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
+
+
+// Giphy API
+// function giphy() {
+// var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+// var purchaseInput = document.querySelector("input[name='purchase-name']").value;
+// console.log(purchaseInput);
+// var gif = categoryGif
+// var getGif = function (gif) {
+//   var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=" + gifApiKey + "&limit=1";
+
+//   var category = fetch(gifurl)
+//   .then(function (response) { 
+//     return response
+//       .json()
+//       .then(function (data) {
+//         console.log(data);
+//         console.log(data.data[0].url);
+
+//         //drop down of options to select a gif. IF STATEMENT
+//         //add gif to the recent spending with list OPTIONS TO SELECT GIFS
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//         var error = document.createElement("p");
+//         error.textContent = "Error";
+//         return;
+//       });
+//   });
+// };
+// getGif();
+// }
+
+
 formEl.addEventListener("submit", createTaskHandler); 
 
 
+
+
+// Price-Checker 
+
+var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 
 var getPrice = function(product){
     // var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
@@ -256,15 +340,3 @@ function renderSearchHistory(){
 
     } 
  }
-
-
-
-
- 
-
-
-
-
-
-
-
