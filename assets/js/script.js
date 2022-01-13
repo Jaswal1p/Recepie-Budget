@@ -116,10 +116,12 @@ let createTaskHandler = function(event) {
             .then(function (data) {
               console.log(data);
               console.log(data.data[0].url);
-            
-            //   function getGif() {
-
-            //   }
+                
+                imageEl = document.createElement("img");
+                imgUrl = data.data[0].images.fixed_height.url;
+                imageEl.src = imgUrl;
+                var spendEl = document.querySelector(".purchase-item");
+                spendEl.appendChild(imageEl);
               
             })
             .catch(function (error) {
