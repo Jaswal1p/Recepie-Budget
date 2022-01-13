@@ -9,6 +9,8 @@ console.log(purchaseList);
 
 renderSearchHistory();
 
+
+
 // var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
 
 //var intro = document.querySelector(".enterBudget");
@@ -55,7 +57,7 @@ let createTaskHandler = function(event) {
     event.preventDefault();
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
-
+    console.log(purchaseInput);
     //let currencySign = document.getElementById("dollar");
 
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
@@ -93,8 +95,40 @@ let createTaskHandler = function(event) {
     purchaseList.push(purchaseAmountInput);
     purchaseList.push(purchaseTypeInput);
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
-}
+
     
+      var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+      
+      console.log(purchaseInput);
+
+      var getGif = function (purchaseInput) {
+        var gifurl =
+          "https://api.giphy.com/v1/gifs/search?q=" +
+          purchaseInput +
+          "&api_key=" +
+          gifApiKey +
+          "&limit=1";
+
+        var category = fetch(gifurl).then(function (response) {
+          return response
+            .json()
+            .then(function (data) {
+              console.log(data);
+              console.log(data.data[0].url);
+
+              
+            })
+            .catch(function (error) {
+              console.log(error);
+              var error = document.createElement("p");
+              error.textContent = "Error";
+              return;
+            });
+        });
+      };
+      getGif();
+    }
+
 
 
 // var getPrice = function(product){
@@ -103,33 +137,35 @@ let createTaskHandler = function(event) {
 
 
 // Giphy API
-var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
-var getGif = function (categoryGif) {
-  var gifurl =
-    "https://api.giphy.com/v1/gifs/search?q=" +
-    categoryGif +
-    "&api_key=" +
-    gifApiKey +
-    "&limit=20";
+// function giphy() {
+// var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
+// var purchaseInput = document.querySelector("input[name='purchase-name']").value;
+// console.log(purchaseInput);
+// var gif = categoryGif
+// var getGif = function (gif) {
+//   var gifurl = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=" + gifApiKey + "&limit=1";
 
-  var category = fetch(gifurl).then(function (response) { //what selected;
-    return response
-      .json()
-      .then(function (data) {
-        console.log(data);
-        //drop down of options to select a gif. IF STATEMENT
-        //add gif to the recent spending with list OPTIONS TO SELECT GIFS
-      })
-      .catch(function (error) {
-        console.log(error);
-        var error = document.createElement("p");
-        error.textContent = "Error";
-        return;
-      });
-  });
-};
-getGif();
+//   var category = fetch(gifurl)
+//   .then(function (response) { 
+//     return response
+//       .json()
+//       .then(function (data) {
+//         console.log(data);
+//         console.log(data.data[0].url);
 
+//         //drop down of options to select a gif. IF STATEMENT
+//         //add gif to the recent spending with list OPTIONS TO SELECT GIFS
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//         var error = document.createElement("p");
+//         error.textContent = "Error";
+//         return;
+//       });
+//   });
+// };
+// getGif();
+// }
 
 
 formEl.addEventListener("submit", createTaskHandler); 
