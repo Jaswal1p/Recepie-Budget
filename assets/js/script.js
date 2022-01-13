@@ -14,34 +14,39 @@ renderSearchHistory();
 
 //If budget exists, do not generate a new budget.
 
+function setBudget(){
+ if (localStorage.getItem("budget") === null) {
+        var budget=[];
 
-// if (localStorage.getItem("budget") === null) {
-//    var budget=[];
-// document.querySelector(".application").style.display="none"
+$("#submitBtn").click(function(){
+    
+   console.log("click")
+   var myBudget = document.getElementById("setLimit").value;
+   console.log(myBudget)
 
-// $("#submitBtn").click(function(){
-//    console.log("click");
-//    var myBudget = document.getElementById("setLimit").value;
-// console.log(myBudget)
-//    if (isNaN(myBudget)) {
-//        document.getElementById("setLimit").value="";
-//        window.alert("Please enter a numeric value.");
-//        return;
-//      }
-//       else {
-//       console.log(myBudget);
-//        budget.push(myBudget);
-//      JSON.stringify("myBudget");
-//      localStorage.setItem("budget", budget);
-//      intro.setAttribute("class", "hide");
-//      document.querySelector(".application").style.display="block";
-//  }
-// })
-// }
-//   else {
-//   intro.style.display="none";
-//    var budget = localStorage.getItem("budget");
-// }
+    budget.push(myBudget);
+    localStorage.setItem("budget", budget);
+
+
+
+ } )}
+
+  else {
+   var budget = localStorage.getItem("budget");
+   document.getElementById('setLimit').setAttribute("class", "hide");
+   document.getElementById('submitBtn').setAttribute("class", "hide");
+   document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
+   console.log("your budget is " + budget);
+
+}
+// var budget = localStorage.getItem("budget");
+// document.getElementById('setLimit').setAttribute("class", "hide");
+// document.getElementById('submitBtn').setAttribute("class", "hide");
+// document.getElementById('enterBudget').innerHTML="Your remaining budget is " + budget;
+// console.log("your budget is " + budget);
+
+}
+setBudget();
 
 
 // Add purchase to spending list 
@@ -96,7 +101,6 @@ let createTaskHandler = function(event) {
     list.appendChild(purchaseInfoEl);
 
     purchaseEl.appendChild(list) 
-
 
     purchaseList.push(purchaseInput);
     purchaseList.push(purchaseAmountInput);
@@ -278,7 +282,6 @@ $("#searchBtn").click(function(){
         getPrice(product);
     } 
 })
-
 
 
 function renderSearchHistory(){
