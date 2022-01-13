@@ -10,13 +10,6 @@ console.log(purchaseList);
 renderSearchHistory();
 
 
-
-// var apiKey = "AIzaSyBsxqmtTs7-gPZXL68yoiN01dtF9hL5vfI"
-
-//var intro = document.querySelector(".enterBudget");
-//var calendar = "https://www.googleapis.com/calendar/v3&appid=" + apiKey;
-
-
 //If budget exists, do not generate a new budget.
 
 
@@ -52,13 +45,14 @@ renderSearchHistory();
 // Add purchase to spending list 
 // document.getElementById("remaining").innerHTML = "Your remaining budget: $" + budget;
 
+
+
 let createTaskHandler = function(event) {
 
     event.preventDefault();
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
-    console.log(purchaseInput);
-    //let currencySign = document.getElementById("dollar");
+
 
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
 
@@ -73,23 +67,34 @@ let createTaskHandler = function(event) {
     formEl.reset();
     emptyListFiller.setAttribute("class", "hide");
 
-    let purchaseMadeEl = document.createElement("li");
-    purchaseMadeEl.className = "purchase-item"; 
+    var list = document.createElement("div");
+    list.className=("purchase-item")
 
-    //let pricePaidEl = document.createElement("div");
-    //pricePaidEl.className.createElement = ("div");
+    let purchaseMadeEl = document.createElement("div");
+    purchaseMadeEl.className = "purchase-info"; 
 
-    let purchaseInfoEl = document.createAttribute("div");
+    let pricePaidEl = document.createElement("div");
+    pricePaidEl.className = "purchase-info"
+
+    let purchaseInfoEl = document.createElement("div");
     purchaseInfoEl.className = "purchase-info";
 
     
     purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
-    purchaseInput + "</h3><h3 class='price'>" + "<span>$ </span>" +
-    purchaseAmountInput +  "</h3><span class='category'>" + 
-    purchaseTypeInput + "</span>";
+    purchaseInput;
+    console.log(purchaseMadeEl);
+    list.appendChild(purchaseMadeEl);
 
-    purchaseEl.appendChild(purchaseMadeEl);
-    console.log(purchaseEl);
+    pricePaidEl.innerHTML="</h3><h3 class='price'>" + "<span>$ </span>" +
+    purchaseAmountInput
+    list.appendChild(pricePaidEl);
+
+
+    purchaseInfoEl.innerHTML = "</h3><span class='category'>" + purchaseTypeInput + "</span>";
+    list.appendChild(purchaseInfoEl);
+
+    purchaseEl.appendChild(list) 
+
 
     purchaseList.push(purchaseInput);
     purchaseList.push(purchaseAmountInput);
@@ -97,6 +102,7 @@ let createTaskHandler = function(event) {
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseList));
 
     
+
       var gifApiKey = "DUICFz1fPH9Op5O6bWpBA8FFQcgH38PP";
       
       console.log(purchaseInput);
@@ -176,12 +182,13 @@ formEl.addEventListener("submit", createTaskHandler);
 
 
 
+
 // Price-Checker 
 
 var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
 
 var getPrice = function(product){
-
+    // var priceApiKey = "C4E1344D574A413B843195ADB5740F41"
     var priceurl="https://api.rainforestapi.com/request?api_key=C4E1344D574A413B843195ADB5740F41&type=search&amazon_domain=amazon.com&search_term=" + product;
 
     fetch(priceurl)
@@ -247,7 +254,6 @@ var getPrice = function(product){
 }
     )}
 
-
 $("#searchBtn").click(function(){
 
     var mySearch = document.getElementById("searchItem").value;
@@ -274,32 +280,58 @@ $("#searchBtn").click(function(){
 
 
 function renderSearchHistory(){
+    let purchaseEl = document.querySelector("#purchase");
+
+    var list = document.createElement("div");
+    list.className=("purchase-item");
+
+    let purchaseMadeEl = document.createElement("div");
+    purchaseMadeEl.className = "purchase-info"; 
+   
+    let pricePaidEl = document.createElement("div");
+    pricePaidEl.className = "purchase-info"
+   
+    let purchaseInfoEl = document.createElement("div");
+    purchaseInfoEl.className = "purchase-info";
+   
     if (purchaseList.length<1){
         return
     }
     purchaseEl.innerHTML="";
-    // for (i=0; i<purchaseList.length; i+2){
-        console.log(purchaseList.length);
+    for (var i=0; i<purchaseList.length; i=i+3){
+
+        var purchaseName = purchaseList[i]; 
+        console.log(purchaseName);
+
+        let purchaseMadeEl = document.createElement("div");
+        purchaseMadeEl.className.createElement = ("div");
+
+        purchaseMadeEl.innerHTML="</h3><h3 class='purchase-name'>" +
+        purchaseName
+        list.appendChild(purchaseMadeEl);
+
+
+        var purchasePrice = purchaseList[i+1]; 
+        console.log(purchasePrice);
+
+        let pricePaidEl = document.createElement("div");
+        pricePaidEl.className.createElement = ("div");
+
+        pricePaidEl.innerHTML="</h3><h3 class='price'>" + "<span>$ </span>" +
+        purchasePrice
+        list.appendChild(pricePaidEl);
+
+        var purchaseType = purchaseList[i+2]; 
+        console.log(purchaseType);
+
+        let purchaseInfoEl = document.createElement("div");
+        purchaseInfoEl.className = "purchase-info";
+
+        purchaseInfoEl.innerHTML = "</h3><span class='category'>" + purchaseType + "</span>";
+        list.appendChild(purchaseInfoEl);
+
+        purchaseEl.appendChild(list) 
+
 
     } 
-
-    
-
-// let purchaseMadeEl = document.createElement("li");
-// purchaseMadeEl.className = "purchase-item"; 
-
-// //let pricePaidEl = document.createElement("div");
-// //pricePaidEl.className.createElement = ("div");
-
-// let purchaseInfoEl = document.createAttribute("div");
-// purchaseInfoEl.className = "purchase-info";
-
-
-// purchaseMadeEl.innerHTML = "<h3 class='purchase-name'>" + 
-// purchaseInput + "</h3><h3 class='price'>" + 
-// currencySign + 
-// purchaseAmountInput +  "</h3><span class='category'>" + 
-// purchaseTypeInput + "</span>";
-
-// purchaseEl.appendChild(purchaseMadeEl);
-// console.log(purchaseEl);
+ }
