@@ -9,16 +9,17 @@ body{
 
 .enterBudget {
     position:absolute;
-    display: flex;
     top: 35%;
     left: 35%;
     background-color:white;
     padding:25px;
+    flex-wrap: nowrap;
+
 }
 
 .enter{
     background-color: white;
-    margin:10px 500px;
+    margin:0 40%;
     display:block;
     padding: 10px;
     border-radius:12px;
@@ -243,6 +244,7 @@ form .form-group {
 
 }    
 
+
 .select-dropdown::-ms-expand,
   .select-status::-ms-expand {
     display: none;
@@ -271,6 +273,8 @@ footer {
     padding: 20px;
     border-top: 5px solid var(--primary);
 }
+
+
 
 /* @media screen and (max-width: 980px) {
     form .form-group {
