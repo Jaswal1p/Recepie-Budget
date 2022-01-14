@@ -101,7 +101,7 @@ form .form-group {
     color: var(--primary);
     margin-bottom: 5px;
     margin-top: 0;
-    margin-left:200px;
+    margin-left: 120px !important;
     text-align:center;
     padding:10px;
 
