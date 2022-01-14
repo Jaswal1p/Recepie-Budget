@@ -54,6 +54,11 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#enterBudget {
+    font-size: 18px;
+    padding: 5px;
+}
+
 header {
     background: var(--secondary);
     padding: 30px 25px;
