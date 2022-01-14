@@ -1,5 +1,5 @@
 # Budget Application
-This web application tracks user's budget via user updates of purchases. This applicationo incorperates Materialize and Web APIs. 
+This web application tracks user's budget via user updates of purchases. This application incorperates Materialize and Web APIs. 
 
 ## USER STORY  
 AS A person who has a limited amount of spendings available
@@ -39,5 +39,6 @@ Screenshot: <img src="./assets/images/ss.png">
 ## Future Developments 
 * Allow all elements to be responsive to screen size. 
 * Finalize Styling 
+
 * Incorperate other currencies 
 * Edit and Clear Purchase Log Items 
