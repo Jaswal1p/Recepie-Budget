@@ -66,7 +66,6 @@ let createTaskHandler = function (event) {
 
     let purchaseInput = document.querySelector("input[name='purchase-name']").value;
 
-
     let purchaseTypeInput = document.querySelector("select[name='category']").value;
 
     let purchaseAmountInput = document.querySelector("input[name='price']").value;

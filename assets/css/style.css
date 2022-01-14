@@ -9,7 +9,7 @@ body{
 
 .enterBudget {
     position:absolute;
-    display: block;
+    display: flex;
     top: 35%;
     left: 35%;
     background-color:white;
@@ -239,6 +239,7 @@ form .form-group {
     border: 2px solid var(--grey) !important;
     border-radius: 12px !important;
     margin: 0 !important;
+    display: flex;
 
 }    
 
