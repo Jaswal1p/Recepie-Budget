@@ -9,16 +9,17 @@ body{
 
 .enterBudget {
     position:absolute;
-    display: block;
     top: 35%;
     left: 35%;
     background-color:white;
     padding:25px;
+    flex-wrap: nowrap;
+
 }
 
 .enter{
     background-color: white;
-    margin:10px 500px;
+    margin:0 40%;
     display:block;
     padding: 10px;
     border-radius:12px;
@@ -51,6 +52,11 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#enterBudget {
+    font-size: 18px;
+    padding: 5px;
 }
 
 header {
@@ -95,7 +101,7 @@ form .form-group {
     color: var(--primary);
     margin-bottom: 5px;
     margin-top: 0;
-    margin-left:200px;
+    margin-left: 120px !important;
     text-align:center;
     padding:10px;
 
@@ -239,8 +245,10 @@ form .form-group {
     border: 2px solid var(--grey) !important;
     border-radius: 12px !important;
     margin: 0 !important;
+    display: flex;
 
 }    
+
 
 .select-dropdown::-ms-expand,
   .select-status::-ms-expand {
@@ -271,17 +279,5 @@ footer {
     border-top: 5px solid var(--primary);
 }
 
-/* @media screen and (max-width: 980px) {
-    form .form-group {
-      flex: 1 100%;
-    }
-  
-    form .form-group button {
-      width: 30%;
-    }
-  
-    .task-list-wrapper {
-      flex-basis: 100%;
-    }
-  
-} */
+
+
